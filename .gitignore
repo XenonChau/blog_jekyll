@@ -1,3 +1,16 @@
+# macOS generate files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Jekyll files
 _site/
 .sass-cache/
 .jekyll-metadata
