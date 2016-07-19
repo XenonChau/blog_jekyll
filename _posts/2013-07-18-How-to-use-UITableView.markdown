@@ -11,25 +11,25 @@ categories: Objective-C
 
 ## 初始化(Initialization)
 
-```
+{% highlight objc %}
 @interface MainViewController () <UITableViewDelegate, UITableViewDataSource>
 
 /**
- *	@param nonatomic: 非原子性，不具有线程安全，但是访问速度更快。非多线程情况下优先使用这个定义。
- *	@param retain: 不开辟新的内存空间，其它对象只会生成一个指针，然后指向同一块内存地址，并给引用计数器+1。
+ *  @param nonatomic: 非原子性，不具有线程安全，但是访问速度更快。非多线程情况下优先使用这个定义。
+ *  @param retain: 不开辟新的内存空间，其它对象只会生成一个指针，然后指向同一块内存地址，并给引用计数器+1。
  */
 @property (nonatomic, retain) UITableView *tableView;
 
 @end
-```
+{% endhighlight %}
 
 ## 用协议方法来设置TableView的各种属性
-```
+{% highlight objc %} 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    /**
-     *	@param UITableViewStyleGrouped:像通讯录一样，组之间会被分隔开来。 UITableViewStylePlain:组与组之间是连贯的。
-     */
+	/**
+ 	 *  @param UITableViewStyleGrouped: 像通讯录一样，组之间会被分隔开来。 UITableViewStylePlain:组与组之间是连贯的。
+ 	 */
     _tableView = [[[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, 568) style:UITableViewStylePlain] autorelease];
     [_tableView setDataSource:self];// 指定数据源为controller，写这个可以走跟数据相关的协议方法。
     [_tableView setDelegate:self];// 指定代理为controller，写这个可以走跟样式相关的协议方法。
@@ -62,25 +62,28 @@ categories: Objective-C
     if (!cell) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID] autorelease];
     }
-    [[cell textLabel] setText:[NSString stringWithFormat:@"第%zi组", [indexPath section]]];// 设置标题文字
-    [[cell detailTextLabel] setText:[NSString stringWithFormat:@"第%zi条", [indexPath row]]];// 设置副标题文字
-    [[cell imageView] setImage:[UIImage imageNamed:@"cell_image.png"]];// 设置左侧的图像。
-    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];// 右边的指示器，可以有几种模式。
+    // 设置标题文字
+    [[cell textLabel] setText:[NSString stringWithFormat:@"第%zi组", [indexPath section]]];
+    // 设置副标题文字
+    [[cell detailTextLabel] setText:[NSString stringWithFormat:@"第%zi条", [indexPath row]]];
+    // 设置左侧的图像。
+    [[cell imageView] setImage:[UIImage imageNamed:@"cell_image.png"]];
+    // 右边的指示器，可以有几种模式。
+    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;
 }
 
 #pragma mark - TableView Method
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    //每组的组头，在下一组的组头过来之前不会滚出屏幕，会悬停在屏幕顶部。
+    // 每组的组头，在下一组的组头过来之前不会滚出屏幕，会悬停在屏幕顶部。
     return [[UIView new] autorelease];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    //每组的组脚
+    // 每组的组脚
     return [[UIView new] autorelease];
 }
-
-```
+{% endhighlight %}
 
 ## 小结
 

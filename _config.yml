@@ -10,7 +10,7 @@ title: Xenon's Blog
 email: me@xenonchau.com
 description: > # this means to ignore newlines until "baseurl:"
   博客没啥可看的，都是屌丝程序员的一些吐槽。
-baseurl: "/blog_jekyll" # the subpath of your site, e.g. /blog
+baseurl: ""#"/blog_jekyll" # the subpath of your site, e.g. /blog
 url: "https://xenonchau.com" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
 github_username:  xenonchau
