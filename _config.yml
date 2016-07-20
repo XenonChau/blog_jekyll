@@ -11,7 +11,7 @@ title                    : "XenonChau的技术博客"
 title_separator          : "-"
 name                     : "Xenon Chau"
 description              : "一个年迈的程序猿的碎碎念。"
-url                      : "https://xenonchau.com"# the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://www.xenonchau.com"# the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/blog_jekyll"# the subpath of your site, e.g. "/blog"
 gh_repo                  :
 teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
