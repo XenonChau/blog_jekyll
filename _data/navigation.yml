@@ -1,7 +1,7 @@
 # main links links
 main:
-  - title: "Sample Navigation Link"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/navigation/
+  - title: "个人主页"
+    url: /homepage_html/
 
-  - title: "Sample Navigation Link 2"
-    url: /
+  - title: "Objwift Cult"
+    url: http://www.objwift.com/
