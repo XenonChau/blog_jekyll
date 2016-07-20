@@ -5,8 +5,6 @@ date:   2013-07-18 21:11:31 +0600
 categories: Objective-C
 ---
 
-# UITbaleView的使用方法
-
 > 序：看了许多教程，觉得TableView是iOS系统里非常常用的控件。它的cell复用机制可以有效的节约内存。
 
 ## 初始化(Initialization)
