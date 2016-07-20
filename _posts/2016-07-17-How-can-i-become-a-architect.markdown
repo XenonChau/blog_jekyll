@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "如何成为一个架构师"
 date:   2016-07-17 22:31:02 +0100
 categories: 文摘

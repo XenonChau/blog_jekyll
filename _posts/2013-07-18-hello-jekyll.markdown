@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Hello Jekyll!"
 date:   2013-07-18 18:37:46 +0800
 categories: 个人随笔

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "UITableView的使用方法"
 date:   2013-07-18 21:11:31 +0600
 categories: Objective-C
