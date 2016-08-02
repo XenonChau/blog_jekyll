@@ -2,7 +2,8 @@
 layout: single
 title:  "2015 Objective-C 新特性"
 date:   2015-06-14 10:02:01 +0800
-categories: 文摘
+categories: Digest
+author: 孙源
 ---
 
 > 出处：[sunnyxx的技术博客](http://blog.sunnyxx.com)  ；原文：[《2015 Objective-C 新特性》](http://blog.sunnyxx.com/2015/06/12/objc-new-features-in-2015/)  ；   

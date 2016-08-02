@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "键值观察者(KVO)模式"
-date:   2016-08-21 20:17:03 +0520
+date:   2013-08-21 20:17:03 +0800
 categories: Objective-C
 ---
 

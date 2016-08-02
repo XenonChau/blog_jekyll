@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "UITableView的使用方法"
-date:   2013-07-18 21:11:31 +0600
+date:   2013-07-18 21:11:31 +0800
 categories: Objective-C
 ---
 
@@ -22,7 +22,7 @@ categories: Objective-C
 {% endhighlight %}
 
 ## 用协议方法来设置TableView的各种属性
-{% highlight objc %} 
+{% highlight objc %}
 - (void)viewDidLoad {
     [super viewDidLoad];
 	/**

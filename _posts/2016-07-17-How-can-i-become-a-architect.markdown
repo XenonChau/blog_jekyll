@@ -1,12 +1,13 @@
 ---
 layout: single
 title:  "如何成为一个架构师"
-date:   2016-07-17 22:31:02 +0100
-categories: 文摘
+date:   2016-07-17 22:31:02 +0800
+categories: Digest
+author: 西乔
 ---
 
 > 原文来自：[西乔的九卦](https://mp.weixin.qq.com/s?__biz=MzAxMzMxNDIyOA==&mid=508060063&idx=1&sn=020d41dc8744f1f73168dc3c66d7a7cb&scene=1&srcid=071888Std7JvCSZYzEkW9IRH&key=77421cf58af4a653858813748ada98c4f43f5834d0dd358252eb0f235104e5df39f2bf67decf93ee1797181f9d958d2c&ascene=0&uin=MjE1Nzc3MTk4MA%3D%3D&devicetype=iMac+MacBookAir6%2C2+OSX+OSX+10.11.5+build(15F34)&version=11020201&pass_ticket=iaO0KOkNEzdhLXfpxX7UK5orw%2BgIClaR9ie28AM1vpNCuEbEnLAcVe78I1ZEabu4)    
-> 很久以前有一天看过西乔的漫画，一口气看到后半夜！同是程序员，所以能get到很多笑点。
+> 很久以前有一天看过西乔的漫画，一口气看到后半夜！从此一追到底。因为同是程序员，所以能get到很多笑点。
 
 西乔的微信公众号二维码：    
 ![](http://blog.xiqiao.info/wp-content/uploads/2015/03/qrcode_for_gh_3a770c0bc91e_344.jpg)
@@ -68,4 +69,3 @@ categories: 文摘
 自打今年年初iOS开始走下坡路开始，我就一直在寻求一个新的发展方向——当然，iOS方向我还是会继续走下去的。也该到了多方面发展的时候了。如果一个iOSer连基本的HTTP协议都不了解，完全不知道后台到底是因为什么原因发给我这样的一个JSON数据……那这个程序员是没有出路的。
 
 从去年开始我就陆陆续续的接触了Linux系统、PHP基础语法和ThinkPHP、在网上简单的查了TCP/IP的构造、学了一点点HTML/css的皮毛，也看了一些javascript,DOM,Ajax等配套语言。现在还是处在一个迷茫期，完全不知道自己该走哪个方向——偏技术向就走全栈、架构师，管理向就走产品经理、项目经理……
-

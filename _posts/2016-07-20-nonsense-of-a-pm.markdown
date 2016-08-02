@@ -1,8 +1,8 @@
 ---
 layout: single
 title:  "一个\"PM\"的胡言乱语"
-date:   2016-07-20 00:02:18 +0430
-categories: 个人随笔
+date:   2016-07-20 00:02:18 +0800
+categories: Essays
 ---
 
 
