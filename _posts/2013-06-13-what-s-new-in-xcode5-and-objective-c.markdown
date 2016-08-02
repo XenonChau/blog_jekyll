@@ -162,3 +162,10 @@ framework module UIKit {
 当然，如果对于以前的工程，想要使用新的Modules特性，如果要把所有头文件都这样一个一个改成@import的话，会是很大的一个工作量。Apple自然也考虑到了这一点，于是对于原来的代码，只要使用的是iOS7或者MacOS10.9的SDK，在Build Settings中将Enable Modules(C and Objective-C)打开，然后保持原来的`#import`写法就行了。是的，不需要任何代码上的改变，编译器会在编译的时候自动地把可能的地方换成Modules的写法去编译的。
 
 Autolinking是Modules的附赠小惊喜，因为在module定义的时候指定来link framework，所以在编译module时LLVM会将所涉及到的框架自动帮你写到link里去，不再需要到编译设置里去添加了。
+
+----------
+
+# 扩展阅读：
+
+> External Reading: [RayWenderlich - 《What’s New in Objective-C and Foundation in iOS 7》](https://www.raywenderlich.com/49850/whats-new-in-objective-c-and-foundation-in-ios-7)   
+Author: [Matt Galloway](https://www.raywenderlich.com/u/mattjgalloway)
