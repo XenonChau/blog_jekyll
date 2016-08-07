@@ -6,11 +6,9 @@ categories: Digest
 author: 王巍
 ---
 
-> 原文引自：[王巍的技术博客－《WWDC 2013 Session笔记 - Xcode5和ObjC新特性》](https://onevcat.com/2013/06/new-in-xcode5-and-objc/)
-
-> 本文只把复制粘贴的文本重新转化成markdown格式，除订阅源外未做任何修改。
-
-> 大趋势使然，我们是时候要向ARC转变了！
+> 原文引自：[王巍的技术博客－《WWDC 2013 Session笔记 - Xcode5和ObjC新特性》](https://onevcat.com/2013/06/new-in-xcode5-and-objc/)    
+> 本文只把复制粘贴的文本重新转化成markdown格式，除订阅源外未做任何修改。    
+> 大趋势使然，我们是时候要向ARC转变了！    
 
 ![](../../images/wwdc2013/xcode5-title.png)
 
