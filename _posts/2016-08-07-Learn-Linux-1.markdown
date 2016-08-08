@@ -56,24 +56,31 @@ $<command> [-options] [file]
 
 #### 常用命令：
 
-`man`:(manual)    
+##### `man`：(manual)    
+
 应该被第一个介绍的命令！    
 意思是使用手册 ，所有的命令都可以通过 `man` 来了解每一个命令代表什么含义以及他的用法。    
 **eg:** `man cd`    
 
-`su` / `sudo`:(super user / super user do)
+##### `su` / `sudo`：(super user / super user do)      
+
 获取超级用户权限，在某些系统目录下、或操作某些关键性文件，需要 root 用户权限。最低限度的保证了系统安全。
 
-`cd`:(change directory)    
+##### `cd`：(change directory)    
+
 切换至某个文件夹下，我们会经常用到该命令。    
 **eg:** `$cd /usr/bin/`    
 
-`ls`:(list)    
+##### `ls`：(list)    
+
 列出目录下包含的文件，加不同的参数会显示出不同的结果样式。    
 
-`grep`:(Global Regular Expression Print)    
+##### `grep`:(Global Regular Expression Print)    
+
 全局正则表达式输出，正则表达式我就不多赘述了。    
 **eg:** `$ls -l | grep "^d"`    
+
+##### 文件操作类：
 
 `mkdir`(make directory): `$mkdir <dir_name>`    
 `rmdir`(remove directory): `$rmdir <dir_name>`    
