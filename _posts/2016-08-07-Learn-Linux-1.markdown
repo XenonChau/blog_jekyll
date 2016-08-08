@@ -54,39 +54,40 @@ $<command> [-options] [file]
 ```    
 *其中 `$` 表示终端提示符。*
 
-#### 常用命令：
+**常用命令：**
 
-##### `man`：(manual)    
+> **`man`：(manual)**    
 
 应该被第一个介绍的命令！    
 意思是使用手册 ，所有的命令都可以通过 `man` 来了解每一个命令代表什么含义以及他的用法。    
 **eg:** `man cd`    
 
-##### `su` / `sudo`：(super user / super user do)      
+> **`su` / `sudo`：(super user / super user do)**    
 
 获取超级用户权限，在某些系统目录下、或操作某些关键性文件，需要 root 用户权限。最低限度的保证了系统安全。
 
-##### `cd`：(change directory)    
+> **`cd`：(change directory)**    
 
 切换至某个文件夹下，我们会经常用到该命令。    
 **eg:** `$cd /usr/bin/`    
 
-##### `ls`：(list)    
+> **`ls`：(list)**    
 
 列出目录下包含的文件，加不同的参数会显示出不同的结果样式。    
 
-##### `grep`:(Global Regular Expression Print)    
+> **`grep`:(Global Regular Expression Print)**    
 
 全局正则表达式输出，正则表达式我就不多赘述了。    
 **eg:** `$ls -l | grep "^d"`    
 
-##### 文件操作类：
+**文件操作类：**
 
-`mkdir`(make directory): `$mkdir <dir_name>`    
+>`mkdir`(make directory): `$mkdir <dir_name>`    
 `rmdir`(remove directory): `$rmdir <dir_name>`    
 `mv`(move): `$mv <old_file_path> <new_file_path>`    
 `cp`(copy): `$cp <old_file_path> <new_file_path>`    
 `rm`(remove): `rm <file_name> or <dir_name>`    
+
 以上均为文件、目录操作：    
 其中 `rmdir` 只能删除**非空**目录。    
 `rm` 有两个经典参数 `-r` `-f` 分别代表 `root` 和 `force`。    
@@ -104,6 +105,7 @@ $sudo rm -rf / user/username/removable_dir/*.jpeg
 #### 文本编辑：
 
 Shell 下还集成了一个强大的文本编辑器 Vi / VIM。
+
 > *Vi 是 Unix 世界里极为普遍的全屏幕文本编辑器， VIM 是它的改进版本 Vi IMproved 的简称。几乎可以说任何一台 Unix 机器都会提供这套软件。*    
 [必应百科](http://www.bing.com/knows/search?q=vi命令&mkt=zh-cn)
 
