@@ -48,7 +48,7 @@ KVO，即使指 [NSKeyValueObserving](https://developer.apple.com/library/mac/do
 
 > **注册**    
 
-```
+```objc
 - (void)addObserver:(NSObject *)anObserver
          forKeyPath:(NSString *)keyPath
             options:(NSKeyValueObservingOptions)options
@@ -57,11 +57,11 @@ KVO，即使指 [NSKeyValueObserving](https://developer.apple.com/library/mac/do
 * `anObserver`：为被观察对象添加的观察者；
 * `keyPath`：路径，就是要观察的属性值；
 * `options`：选项，给你观察键值变化的选择, 监听新值或者旧值；
-* `context`：上下文，用来传输你需要的数据(** `void *` ** 类型瞩目)；
+* `context`：上下文，用来传输你需要的数据( `void *` 类型瞩目)；
 
 > **监听**
 
-```
+```objc
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
@@ -74,7 +74,7 @@ KVO，即使指 [NSKeyValueObserving](https://developer.apple.com/library/mac/do
 
 > **销毁**
 
-```
+```objc
 - removeObserver:(NSObject *)anObserver
       forKeyPath:(NSString *)keyPath
          context:(void *)context;

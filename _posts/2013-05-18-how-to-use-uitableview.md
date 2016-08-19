@@ -46,12 +46,12 @@ categories: Objective-C
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // 返回组数量
-    return 2;
+    return [_dataSource count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // 返回每组多少
-    return 3;
+    return [[_dataSource objectAtIndex:section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -68,6 +68,11 @@ categories: Objective-C
     [[cell imageView] setImage:[UIImage imageNamed:@"cell_image.png"]];
     // 右边的指示器，可以有几种模式。
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+
+    // 实际工作中，我们还是要使用 MVC 模式进行数据赋值。例如这样：
+    XXModel *model = [[_dataSource objectAtIndex:[indexPath section]] objectAtIndex:[indexPath row]];
+    [cell updateWithModel:model];
+
     return cell;
 }
 
@@ -81,6 +86,12 @@ categories: Objective-C
     // 每组的组脚
     return [[UIView new] autorelease];
 }
+{% endhighlight %}
+
+{% highlight objc %}
+
+
+
 {% endhighlight %}
 
 ## 小结
