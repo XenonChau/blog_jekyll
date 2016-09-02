@@ -1,3 +1,10 @@
+---
+layout: single
+title:  "objc_msgSend消息传递学习笔记 (对象方法消息传递流程)"
+date:   2016-09-02 09：39：00 +0800
+categories: Objective-C | Digest
+---
+
 # objc_msgSend消息传递学习笔记 - 对象方法消息传递流程
 
 > 原文：[《objc_msgSend消息传递学习笔记 - 对象方法消息传递流程》@desgard.com](https://desgard.com/objc_msgSend1/)
