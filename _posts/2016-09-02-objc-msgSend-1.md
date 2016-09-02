@@ -5,9 +5,9 @@ date:   2016-09-02 09：39：00 +0800
 categories: Objective-C Digest
 ---
 
-# objc_msgSend消息传递学习笔记 - 对象方法消息传递流程
-
 > 原文：[《objc_msgSend消息传递学习笔记 - 对象方法消息传递流程》@desgard.com](https://desgard.com/objc_msgSend1/)
+
+# objc_msgSend消息传递学习笔记 - 对象方法消息传递流程
 
 > 在《Effective Objective-C 2.0 - 52 Specific Ways to Improve Your iOS and OS X Programs》一书中，tip 11主要讲述了 Objective-C 中的消息传递机制。这也是 Objective-C 在 C 的基础上，做的最基础也是最重要的封装
 
