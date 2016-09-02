@@ -83,7 +83,7 @@ typedef struct objc_selector *SEL;
 #import "DGObject.h"
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        DGObject *obj = [[DGObject alloc]init];
+        DGObject * obj = [[DGObject alloc] init];
         NSLog(@"%p", @selector(test));
         [obj test];
     }
@@ -93,7 +93,7 @@ int main(int argc, const char * argv[]) {
 
 然后我们在 `objc-runtime-new.mm` 中，进行 debug 。为了研究清楚 Runtime 是如何查询到调用函数，我们在 `lookUpImpOrForward` 下断点。当程序执行 `[obj test]`` 后，我们发现到达断点位置，并且观察此时的调用栈情况：
 
-![](../../images/objc_msgSend/look-up-imp-or-forward.jpg)
+![](./../../images/objc_msgSend/look-up-imp-or-forward.jpg)
 
 `objc_msgSend` 并不是直接调用查询方法，而是先调用了 `_class_lookupMethodAndLoadCache3` 这个函数。    
 看下它的源码：
