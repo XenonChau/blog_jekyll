@@ -40,7 +40,7 @@ typedef struct objc_selector *SEL;
 而至于这个 `objc_selector` 的结构体是如何定义的，这就要取决于我们 Runtime 框架的类型，在 iOS 开发中，我们使用的是 Apple 的 <objc/runtime.h> (GNU 也有 Runtime 的 framework)。在 OS X 中 `SEL` 被映射成为一个 C 字符串(`char[]`)，这个字符串也就是方法名。    
 我们在 lldb 中，进行测试：
 
-![]({%url%}{%baseurl%}/images/objc_msgSend/sel_map_to_string.jpg)
+![]({{site.url}}{{site.baseurl}}/images/objc_msgSend/sel_map_to_string.jpg)
 
 > ***图释：***   
   `test`是在 `DGObjectClass` 中已经定义的方法名，而 `not_define_test` 和 `not_define_test_2` 没有定义。
@@ -93,7 +93,7 @@ int main(int argc, const char * argv[]) {
 
 然后我们在 `objc-runtime-new.mm` 中，进行 debug 。为了研究清楚 Runtime 是如何查询到调用函数，我们在 `lookUpImpOrForward` 下断点。当程序执行 `[obj test]`` 后，我们发现到达断点位置，并且观察此时的调用栈情况：
 
-![]({%url%}{%baseurl%}/images/objc_msgSend/look-up-imp-or-forward.jpg)
+![]({{site.url}}{{site.baseurl}}/images/objc_msgSend/look-up-imp-or-forward.jpg)
 
 `objc_msgSend` 并不是直接调用查询方法，而是先调用了 `_class_lookupMethodAndLoadCache3` 这个函数。    
 看下它的源码：
@@ -295,7 +295,7 @@ void _class_resolveMethod(Class cls, SEL sel, id inst) {
 
 来单步调试一下程序，由于我们的 `test` 方法属于正常的类方法，所以会进入正常地查询类方法列表中查到，进入 `done` 函数块，返回到 `objc_msgSend` 方法，最终会到我们的函数调用位置：
 
-![]({%url%}{%baseurl%}/images/objc_msgSend/look_up_imp_to_done.jpg)
+![]({{site.url}}{{site.baseurl}}/images/objc_msgSend/look_up_imp_to_done.jpg)
 
 ## IMP in Method List Flow
 
@@ -303,7 +303,7 @@ void _class_resolveMethod(Class cls, SEL sel, id inst) {
 
 `objc_msgSend` 函数是使用汇编语言实现的，其中我们先尝试的从缓存表中（也就是常说的快速映射表）查询缓存，倘若查询失败，则会将具体的类对象、选择子、接收者在指定的内存单元中存储，并调用 `__class_lookupMethodAndLoadCache3` 函数。 `__class_lookupMethodAndLoadCache3` 我们俗称为在方法列表中查询的入口函数，他会直接调用 `lookUpImpOrForward` 进行查询方法对应的 `IMP` 指针。由于我们是方法函数，在获取方法列表后，即可查询到 `IMP` 指针。由于是第一次调用，则会把我们的方法加入缓存，并 `goto` 到 `done` 代码块，返回 `IMP` 指针。当 `objc_msgSend` 接收到 `IMP` 指针后存储至 rax 寄存器，返回调用函数位置，完成整个消息传递流程。
 
-![]({%url%}{%baseurl%}/images/objc_msgSend/work_flow.jpg)
+![]({{site.url}}{{site.baseurl}}/images/objc_msgSend/work_flow.jpg)
 
 ## 写在最后
 
