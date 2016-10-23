@@ -1,18 +1,16 @@
 ---
 layout: single
-title:  "Linux 目录结构"
+title:  "Linux 目录结构 (Linux Filesystem Hierarchy)"
 date:   2016-10-23 21:51:30 +0800
 categories: Linux
 ---
-
-# Linux 目录结构 (Linux Filesystem Hierarchy)
 
 > 说在最前面：Linux 系统中所有的东西都是文件。
 
 ## 1.0. /
 Linux 的根目录，全部文件都存放在这个目录下。下列目录是系统必须的目录：
 
-![](http://www.tldp.org/LDP/intro-linux/html/images/FS-layout.png)
+![](http://www.tldp.org/LDP/intro-linux/html/images/FS-layout.png)    
 *图片来源：http://www.tldp.org/LDP/intro-linux/html/sect_03_01.html*
 
 
@@ -75,7 +73,7 @@ Library，存放运行相关的库文件。
 ## 1.7. /media
 U盘或光盘等外设插入设备后，会自动挂载在这个目录下。有些系统会没有这个目录，则会挂载在 `/mnt` 下。
 
-## 1.8. ／mnt
+## 1.8. /mnt
 挂载点，所有的设备都会在这里显示出来。
 
 ## 1.9. /opt
