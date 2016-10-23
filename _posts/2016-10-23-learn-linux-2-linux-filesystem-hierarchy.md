@@ -45,8 +45,8 @@ Binary：存放系统二进制文件的目录。默认权限 `777` 。
 
 ## 1.3. /dev
 Device，存放所有硬件设备的目录。    
-* eg0. /dev/sda 是硬盘， sda1就是硬盘的第一个分区。    
-* eg1. /dev/tty tty0 tty1 ... 就是我们的终端设备。    
+* eg0: /dev/sda 是硬盘， sda1就是硬盘的第一个分区。    
+* eg1: /dev/tty tty0 tty1 ... 就是我们的终端设备。    
 
 ## 1.4. /etc
 et cetera，用于存放系统的配置文件。大多数都是 `.cnf` 或 `.conf`  类型的纯文本文件。
@@ -54,6 +54,7 @@ et cetera，用于存放系统的配置文件。大多数都是 `.cnf` 或 `.con
 ## 1.5. /home
 存放所有用户的私有数据，如桌面、文档等……
 在每个用户的目录下均存在以下目录：
+
 ```text
 Desktop		桌面
 Documents	文档
