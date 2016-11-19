@@ -1,7 +1,7 @@
 # main links links
 main:
-  - title: "ギリギリ实验室"
+  - title: "ギリギリ实验室 - Ruby on Rails"
     url: http://xenonchau.com/
 
-  - title: "Presentation"
-    url: http://xenonchau.com/homepage_html/
+  #- title: "Presentation"
+  #  url: http://xenonchau.com/homepage_html/
