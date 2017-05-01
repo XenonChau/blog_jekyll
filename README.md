@@ -1,27 +1,13 @@
-Notepad is a Jekyll theme which is very simple, clean and beautiful. This theme is good for any blog.
-  
-Main Features:
+# 呐～我的博客又放上来了。
 
-* Zurb Foundation 5 – css framework
-* Scss files with settings file
-* Fullscreen post covers with header wich will be bright or dark according to background image
-* Fast and light
-* Font Awesome
-* Disqus comments integration
+本来我想的是：大家都在搞 Jekyll 博客、Hexo 博客，随便配置一下就好了啊，一点技术含量都没有，加上他们的文章都是摘抄、截取、“来自互联网”……就让我毅然撤下了博客。    
+一次意外之后（我更换了 Mac 的用户名），发现我的 ruby 环境出现了故障，我就兴致勃勃的决定修复ruby（觉得像是重装一个 app 一样简单）    
+由于没有太多的 Linux 基础，又遇上了 Yosemite 对 `/usr/bin/` 文件夹的封锁，更新 ruby 的旅途一再受挫！    
+虽然现在已经基本上解决了大部分的 ruby 环境问题，但是偶尔用一下其他依赖于 ruby 环境的 package，也会莫名其妙的报错！    
+重新设置 Jekyll 的时候发现了某些模板也包含了很多 ruby 依赖的 package。萌生了我再次把博客放到网上的想法。
 
-You can set post image covers by using only Kramdown narkdown, just place something like this: `![cover-image](http://path-to-your-image.jpg)`
+# WHY
 
-Credits:
-
-* Zurb Foundation 5 [http://foundation.zurb.com/](http://foundation.zurb.com/)
-* Font Awesome [http://fontawesome.io](http://fontawesome.io)
-* Google fonts [http://www.google.com/fonts](http://www.google.com/fonts)
-* Background check [http://kennethcachia.com/background-check](http://kennethcachia.com/background-check)
-* Codrops article: [http://tympanus.net/codrops/2014/05/22/inspiration-for-article-intro-effects/](http://tympanus.net/codrops/2014/05/22/inspiration-for-article-intro-effects/)
-* There are also tools like jQuery, Modernizr, Normalize.
-
-If you'd like to give me credit somewhere on your blog or tweet a shout out to [@hmfaysal](https://twitter.com/hmfaysal), that would be pretty sweet.
+我觉得我经历了一个独栈程序员的知识广度扩散的起步阶段，现在有一些其他的知识值得记录了。
 
 
-Warm Regards and Stay Creative,  
-Hossain Mohd. Faysal
