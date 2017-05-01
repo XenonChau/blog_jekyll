@@ -47,22 +47,23 @@ links:
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Asia/Shanghai
-future:      true
-# highlighter: pygments
+future:      true # 这个地方支持先写后发布。
+highlighter: pygments
 markdown:    kramdown
 paginate:    5
 paginate_path: "page:num"
-syntax_highlighter: coderay
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink:   /:title #/:categories/:title
 
-# kramdown:
-#   auto_ids: true
-#   footnote_nr: 1
-#   entity_output: as_char
-#   toc_levels: 1..6
-#   enable_coderay: true
+kramdown:
+  input: GFM
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  # enable_coderay: false # Jekyll 3.2 之后不推荐使用此写法
+  syntax_highlighter: rouge #pygments
 
 #   coderay:
 #     coderay_line_numbers: 
