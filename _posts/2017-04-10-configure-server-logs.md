@@ -50,7 +50,7 @@ featured: true
 
 会输出类似这样的文字：（我把我的公钥修改过粘贴过来的）
 
-```
+```shell
 ssh-rsa AADFB3NzaC1yc21234567890/j3xzZFP6KkPRbvrK/n5Eo3IaOEfOAssvjK1ye/TBi8EXGoOl+BUWBhpt1X1M4iDkYY23q12345678901234567890YVMitWldnwekgdkxtIIKPoaKUsmMlEDxM741FD91234567890-1234567890vuHNN9VvQdtY6VDWkZLhNoePbiomFFdiBz89PLX6ssWCOTOS+JgUX0VSuVu003iV123456789012345678901234567890RjwqVBAJfZ2UpK9UThPTzdXB2d/+mUbqxc8oZdyqXVoNbCsumbz3wfadxLpwPU6RlGnxHQfrZH9M21kZ47GL user@local
 ```
 
@@ -67,7 +67,8 @@ ssh-rsa AADFB3NzaC1yc21234567890/j3xzZFP6KkPRbvrK/n5Eo3IaOEfOAssvjK1ye/TBi8EXGoO
 `/home/$UESR/.ssh/authorized_keys` : 600 （`-rw-------`）
 
 修改`/etc/ssh/sshd_config`中：
-```
+
+```bash
 RSAAuthentication yes
 PubkeyAuthentication yes
 ```
@@ -128,7 +129,7 @@ clone 下来的仓库第一次是不能直接 push 的，按照贴心的提示�
 通常安装一个包，最好是去官网下载一个最新版的。
 wget 下载到 /usr/local/src/ 
 
-```
+```shell
 ./configure
 make
 make install
@@ -174,15 +175,19 @@ AUTOMAKE 和 AUTOCONF，可以参考 [CNGNU.ORG(现已更名linux.cn)](https://l
 Linux 的用户可能知道，在 Linux 下安装一个应用程序时，一般先运行脚本 `configure` ，然后用 `make` 来编译源程序，在运行 `make install`，最后运行 `make clean` 删除一些临时文件。使用上述三个自动工具，就可以生成 configure 脚本。运行 `configure` 脚本，就可以生成 Makefile 文件，然后就可以运行 `make`、`make install` 和 `make clean`。
 configure 是一个 shell 脚本，它可以自动设定源程序以符合各种不同平台上 Unix 系统的特性，并且根据系统叁数及环境产生合适的Makefile文件或是C的头文件(header file)，让源程序可以很方便地在这些不同的平台上被编译连接。
 这时，就可运行 configure 脚本了，运行 configure 脚本，就可产生出符合 GNU 规范的 Makefile 文件了：
-```
+
+```shell
 $ ./configure
 ```
+
 到此时，就可以运行 make 进行编译，在运行 `make install` 进行安装了，最后运行 `make clean` 删除临时文件。
-```
+
+```shell
 $ make
 $ make install           (注：运行这个要有足够的权限)
 $ make clean
 ```
+
 利用 `configure` 所产生的 Makefile 文件有几个预设的目标可供使用，其中几个重要的简述如下：
 
 - `make all`：产生我们设定的目标，即此范例中的可执行文件。只打make也可以，此时会开始编译原始码，然后连结，并且产生可执行文件。
@@ -200,7 +205,7 @@ $ make clean
 
 > step 1:
 
-```
+```shell
 sudo dd if=/dev/zero of=/home/swap bs=64M count=16
 # of=/home/swap,放置 swap 的空间; 
 # count=16 的大小就是增加的 swap 空间的大小，bs = 64M 就是块大小
@@ -210,7 +215,7 @@ sudo dd if=/dev/zero of=/home/swap bs=64M count=16
 
 > step 2:
 
-```
+```shell
 sudo mkswap /home/swap
 # 可能会提示warning: don't erase bootbits sectorson whole disk. Use -f to force，不用理会。
 # 把刚才空间格式化成 swap 格式
@@ -218,14 +223,14 @@ sudo mkswap /home/swap
 
 > step 3:
 
-```
+```shell
 sudo swapon /home/swap
 # 激活刚才创建的 swap 空间
 ```
 
 > step 4:
 
-```
+```shell
 执行你相关的操作，如 make
 如果创建了临时空间仍然提示 "g++: 内部错误：Killed (程序 cc1plus)"，可能分配的空间不够大，可继续分配更大的空间。
 ```
@@ -252,7 +257,7 @@ sudo swapon /home/swap
 
 配置好之后可以用以下命令登录到 mysql cli：
 
-```
+```sql
 mysql -uroot -p
 # 这个地方输入刚才安装成功之后给你生成的临时密码。
 # 比如我的初始密码：GiB%3ca:,qw(
@@ -263,16 +268,19 @@ mysql -uroot -p
 [B.5.3.2 How to Reset the Root Password](https://dev.mysql.com/doc/refman/5.7/en/resetting-permissions.html)
 
 MySQL 5.7.6 and later:  
-```
+
+```sql
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass';
 ```
 
 MySQL 5.7.5 and earlier:  
-```
+
+```sql
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('MyNewPass');
 ```
 
 如果你之前配置目录写错了，请同时修改  
+
 `/etc/my.cnf` 和 `path/to/mysql/bin/mysqld`
 
 最重要的是要配置一个高可用的mysql，需要修改 `/etc/my.cnf`
@@ -296,19 +304,24 @@ SET PASSWORD FOR 'root'@'localhost' = PASSWORD('MyNewPass');
 看名字就知道，gem 是宝石的统称，ruby 是红宝石，所以 gem 一定跟 ruby 有关系——是的，gem 是 ruby 的包管理工具。
 
 安装：
+
 `# yum install rubygems`
 
 修改 gem 源为国内镜像：
+
 `$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems/org/`
 
 然后检查一下是否是唯一源：
+
 `$ gem sources -l`
 
 **local 创建 rails 工程时，`rails new project` 在 `bundle install` 卡住的解决办法：**
-```
+
+```shell
 find /path/to/your/gems/ -name "Gemfile" | xargs sed -i -e "s%rubygems.org%gems.ruby-china.org%g"
 # \ / : % 都可以作为定界符来使用。。。
 ```
+
 批量修改全部的Gemfile源。
 
 > 其实[gem 源](https://gems.ruby-china.org/)上有更好的解决办法：
@@ -323,7 +336,7 @@ $ bundle config mirror.https://rubygems.org https://gems.ruby-china.org
 
 这样你不用改你的 Gemfile 的 source。
 
-```
+```shell
 source 'https://rubygems.org/'
 gem 'rails', '4.2.5'
 ...
@@ -333,16 +346,17 @@ gem 'rails', '4.2.5'
 
 #### RVM
 
-用于安装不同版本的ruby，以及轻松切换ruby环境。
+用于安装不同版本的 ruby，以及轻松切换 ruby 环境。
 
 先验证 `gpg2` 需要下载如下文件：
-```
+
+```shell
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 ```
 
 安装 RVM：
 
-```
+```shell
 \curl -sSL https://get.rvm.io | bash # 最新的开发版
 # 或者
 \curl -sSL https://get.rvm.io | bash -s stable # 最新的发行版（推荐）
@@ -350,7 +364,7 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB8
 
 然后需要将 RVM 添加到命令行：
 
-```
+```shell
 source ~/.zshrc # 使用 zsh
 # 或者
 source ~/.profile # 使用 bash
@@ -374,11 +388,15 @@ source ~/.profile # 使用 bash
 **貌似只有编译安装方式，同MySQL。**
 
 使用
+
 `ln -s /usr/local/python3.6/bin/python3 /usr/bin/python3`
+
 创建一个软连接到系统环境变量中。
 
 我在服务器上将 `python` 重新链接到 `python3` 上，并修改原 `python` 为 `python2`。
-这样会导致一个问题：很多安装脚本是用py2书写的，和py3在格式上会有差异。有时候 `./configure` 提示 `syntex error` 的时候不要惊慌，按照提示打开指定文件，修改首行 `#!/usr/bin/python` 为 `#/usr/bin/python2` 即可。
+这样会导致一个问题：很多安装脚本是用py2书写的，和py3在格式上会有差异。
+
+有时候 `./configure` 提示 `syntex error` 的时候不要惊慌，按照提示打开指定文件，修改首行 `#!/usr/bin/python` 为 `#/usr/bin/python2` 即可。
 
 #### Flask
 #### Tornado
@@ -390,8 +408,13 @@ source ~/.profile # 使用 bash
 阿里云源包含了绝大部分的包，不用下面那么麻烦。
 
 `yum install epel-release`安装EPEL源（Extra Packages for Enterprise Linux）
+
 `rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm` 获取PHP7源
-`yum install  –enablerepo=remi-php70  -y php-opcache php-devel php-mbstring php-mcrypt php-mysqlnd` 指定源来安装PHP7。你可以使用 `yum info –enablerepo=remi-php70 php` 查看版本。
+
+`yum install  –enablerepo=remi-php70  -y php-opcache php-devel php-mbstring php-mcrypt php-mysqlnd` 指定源来安装PHP7。
+
+你可以使用 `yum info –enablerepo=remi-php70 php` 查看版本。
+
 或者直接执行`yum install php71`
 
 **不过朋友推荐用编译安装方式，如果想增加插件，可以重新编译。**
@@ -407,7 +430,8 @@ source ~/.profile # 使用 bash
 
 ### Jekyll
 
-这个不想在自己服务器上部署了，用 gh-pages 服务挺好的。  
+这个不想在自己服务器上部署了，用 gh-pages 服务挺好的。 
+ 
 时至今日(2017)，Jekyll 已经发布了 [3.4.3](https://jekyllrb.com/news/2017/03/21/jekyll-3-4-3-released/)，有许多库已经 Deprecated 了。这次重新更新博客主题就发现了这个问题，有许多坑要重新踩。
 
 ### Markdown
