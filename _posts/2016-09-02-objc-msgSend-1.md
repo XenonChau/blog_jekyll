@@ -1,8 +1,9 @@
 ---
-layout: single
+layout: post
 title:  "objc_msgSend消息传递学习笔记 (对象方法消息传递流程)"
-date:   2016-09-02 09：39：00 +0800
-categories: Objective-C Digest
+modified:   2016-09-02 09：39：00 +0800
+categories: Objective-C articles
+tags: [转载, OC, iOS, 理论]
 ---
 
 > 原文：[《objc_msgSend消息传递学习笔记 - 对象方法消息传递流程》@desgard.com](https://desgard.com/objc_msgSend1/)
@@ -21,7 +22,7 @@ C 中的函数调用方式，是使用的静态绑定(static binding)，即**在
 id returnValue = [DGObject test];
 ```
 
-其中`someObject`为接收者(receiver)，`messageName`为选择子(selector)。当 Compiler 看的这条语句时，会将其转换成为一条标准的消息传递的 C 函数：`objc_msgSend`。形如：
+其中`someObject`为接收者(receiver)，`messageName` 为选择子(selector)。当 Compiler 看的这条语句时，会将其转换成为一条标准的消息传递的 C 函数：`objc_msgSend`。形如：
 
 ```objc
 void objc_msgSend(id self, SEL cmd, ...)
@@ -43,7 +44,7 @@ typedef struct objc_selector *SEL;
 ![]({{site.url}}{{site.baseurl}}/images/objc_msgSend/sel_map_to_string.jpg)
 
 > ***图释：***   
-  `test`是在 `DGObjectClass` 中已经定义的方法名，而 `not_define_test` 和 `not_define_test_2` 没有定义。
+  `test` 是在 `DGObjectClass` 中已经定义的方法名，而 `not_define_test` 和 `not_define_test_2` 没有定义。
 
 第一行我们验证了 `@selector` 是一个 `char[]` 类型。其他的结果我们可以总结出：`@selector()` 选择子**只与函数名有关**。而且还有一个规律，那就是倘若选择子方法已经在编译期由 Compiler 进行静态绑定，则其存储的地址就会更加的具体。
 
@@ -158,11 +159,12 @@ END_ENTRY	_objc_msgSend
 
 而在 `objc-msg-x86_64.s` 中有多个以 `objc_msgSend` 为前缀的方法，这个是根据返回值类型和调用者类型分别处理的，我列举三个常用的：
 
-| | |
+| 函数 | 释意 |
 |--|--|
 |objc_msgSend_stret	|待发送的消息要返回结构体<br/>前提是只有当CPU的寄存器能够容纳的下消息返回类型。|
 |objc_msgSend_fpret	|消息返回的是浮点数。<br/>因为某些架构的CPU调用函数，需要对浮点数寄存器做特殊处理。|
 |objc_msgSendSuper	|需要向superClass发送消息时调用。|
+
 
 ## lookUpImpOrForward
 
@@ -308,3 +310,5 @@ void _class_resolveMethod(Class cls, SEL sel, id inst) {
 ## 写在最后
 
 其实消息传递及转发流程是一个相对来说比较复杂的机制。本文所讲述的流程是我们最常见的一种形式。在之后的消息传递与转发的博文中，还会更加深入的探讨这一机制相关流程并深入的阅读源码。
+
+

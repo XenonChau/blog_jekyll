@@ -1,8 +1,15 @@
 ---
-layout: single
-title:  "UITableView的使用方法"
-date:   2013-05-18 21:11:31 +0800
-categories: Objective-C
+layout: post
+title: "UITableView的使用方法"
+description: "A ton of text to test readability."
+category: Objective-C
+tags: [入门, 教程, OC, iOS]
+image:
+  feature: so-simple-sample-image-2.jpg
+  credit: Michael Rose
+  creditlink: http://mademistakes.com
+comments: false
+share: false
 ---
 
 > 序：看了许多教程，觉得TableView是iOS系统里非常常用的控件。它的cell复用机制可以有效的节约内存。
@@ -102,3 +109,5 @@ categories: Objective-C
 2. 系统会自动控制滚出屏幕的单元格，滚动速度特别快的时候，来不及复用的时候，会生成很多单元格，并不会闪退。
 3. 看API里还有一些像移动、删除列表的方法还有待研究。
 4. 看有些应用里会有插入和删除的动画效果，感觉很炫，还是要多看看Github学习一下的。
+
+

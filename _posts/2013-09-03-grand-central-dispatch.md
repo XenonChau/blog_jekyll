@@ -1,7 +1,7 @@
 ---
-layout: single
+layout: post
 title:  "强大的多线程编程－－GCD"
-date:   2013-09-03 19:22:19 +0800
+modified:   2013-09-03 19:22:19 +0800
 categories: Objective-C
 ---
 
@@ -100,3 +100,5 @@ dispatch_release(serialQueue2);
 ## 小结：
 
 > 这只是我在工作中能遇到的一些简单的 GCD 函数，如果需要更深入的去了解并发编程，我还有很长的路要走。
+
+

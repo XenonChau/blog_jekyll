@@ -1,8 +1,9 @@
 ---
-layout: single
+layout: post
 title:  "WWDC 2013 Session笔记 - Xcode5和ObjC新特性"
 date:   2013-06-13 21:00:08 +0800
-categories: Digest
+categories: Objective-C articles
+tags: [转载, 知识储备]
 author: 王巍
 ---
 
@@ -167,3 +168,5 @@ Autolinking是Modules的附赠小惊喜，因为在module定义的时候指定�
 
 > External Reading: [RayWenderlich - 《What’s New in Objective-C and Foundation in iOS 7》](https://www.raywenderlich.com/49850/whats-new-in-objective-c-and-foundation-in-ios-7)   
 Author: [Matt Galloway](https://www.raywenderlich.com/u/mattjgalloway)
+
+

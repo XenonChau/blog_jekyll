@@ -1,8 +1,10 @@
 ---
-layout: single
+layout: post
 title:  "一点Linux学习心得（基础篇）"
-date:   2016-08-07 20:04:38 +0800
+description:
+modified:   2016-08-07 20:04:38 +0800
 categories: Linux
+tags: [基础]
 ---
 
 > 阅读了《鸟哥》两部曲，我觉我得对 Linux 能有一个大概的了解了。因为没有项目实战，很多都只是操作过而已，过目就忘。
@@ -124,3 +126,5 @@ Linux 是一个很强大的操作系统，Windows 也是， macOS 也是。
 为什么这么说？
 
 `You can you up, no can no bb.`(你行你写一个操作系统玩玩啊？)
+
+

@@ -1,11 +1,14 @@
 ---
-layout: single
-title:  "Linux 目录结构 (Linux Filesystem Hierarchy)"
-date:   2016-10-23 21:51:30 +0800
+layout: post
+title:  "Linux 目录结构"
+description:
+modified:   2016-10-23 21:51:30 +0800
 categories: Linux
+tags: [基础]
 ---
 
-> 说在最前面：Linux 系统中所有的东西都是文件。
+> Linux Filesystem Hierarchy  
+> 说在最前面：Linux 系统中所有的东西都是文件。 本文中目录结构以 GUI Linux 举例。
 
 ## 1.0. /
 Linux 的根目录，全部文件都存放在这个目录下。下列目录是系统必须的目录：
@@ -65,7 +68,7 @@ Videos		视频
 ```
 
 ### 1.5.0. ~
-实际上就是 `/home/$USER/` 目录，当前用户的默认目录。
+实际上就是 `/home/$USER/` 目录，当前用户的“家”目录。
 
 ## 1.6. /lib
 Library，存放运行相关的库文件。

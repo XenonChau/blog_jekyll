@@ -1,7 +1,7 @@
 ---
-layout: single
+layout: post
 title:  "KVC && KVO"
-date:   2013-08-21 20:17:03 +0800
+modified:   2013-08-21 20:17:03 +0800
 categories: Objective-C
 ---
 
@@ -84,3 +84,5 @@ KVO，即使指 [NSKeyValueObserving](https://developer.apple.com/library/mac/do
 ## End Words
 
 `Objective-C` 中 `runtime` 机制也是一个非常值得深入研究的东西，希望我能真正的理解其中一部分，届时我会写一篇博客来记录一下的。
+
+

@@ -1,8 +1,9 @@
 ---
-layout: single
+layout: post
 title:  "2015 Objective-C 新特性"
-date:   2015-06-14 10:02:01 +0800
-categories: Digest
+modified:   2015-06-14 10:02:01 +0800
+categories: Objective-C articles
+tags: [转载, 知识储备]
 author: 孙源
 ---
 
@@ -201,3 +202,5 @@ UIButton *button = view.subviews.lastObject;
 [MSDN: 《泛型中的协变和逆变》](https://msdn.microsoft.com/zh-cn/library/dd799517.aspx)
 
 [GitHubGist: 《fun with Obj-C "generics"》](https://gist.github.com/jtbandes/881f07a955ff2eadd1a0)
+
+

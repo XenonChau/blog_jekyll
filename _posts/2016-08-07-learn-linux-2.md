@@ -1,8 +1,10 @@
 ---
-layout: single
+layout: post
 title:  "一点Linux学习心得（组合键篇）"
-date:   2016-08-20 09：20：38 +0800
-categories: Linux Digest
+description: 
+modified:   2016-08-20 09：20：38 +0800
+categories: Linux
+tags: [基础]
 ---
 
 ### Linux 部分 Bash 命令
@@ -49,3 +51,5 @@ categories: Linux Digest
 1. Mac 快捷键
 
     `⌘-L`：清除当前行至上的一整屏幕文字（不同于Ctrl-L，此为彻底清除。）
+    `⌘-K`：清除当前 tty 全部内容。
+
