@@ -32,48 +32,65 @@ Hi, 我是 **Xenon Chau**, 一个 iOS 开发者, 这儿是我的博客. 全站�
 
 ### 我的技术发展发展方向：
 
-*由于 markdown 的流程图我没画明白，所以就找了个简单的方式来画这个吧*
+*由于 markdown 的流程图我没画明白，所以就找了个简单的方式来画这个吧*  
 [百度脑图](http://naotu.baidu.com/file/83c17528d7e435047aadafb90b28efcd)
 
 > 下面是我所持有的技术：
 
 #### Objective-C 技术栈：
-	• Runtime、Runloop 特性
-	• Masonry、Autolayout、Constraints
-	• CocoaPods
-	• GCD
-	• 事件响应流程、消息传递方式
-	• 内存管理机制
+* Runtime
+* Runloop / GCD
+* Block
+* Autolayout
+* CocoaPods
+* 设计模式
+* 事件响应流程、消息传递方式
+* 内存管理机制
+
+##### 需要加强的地方（毕竟是主业）
+* <del>JSPatch</del>（已经被Apple干死了）
+* 对象模型（看了很多教程，什么isa啊，meta-class啊，IMP啊，但面试时候就是说不出来。）
+* Hybrid（怎么说呢，好多公司为了敏捷开发选择了Hybrid模式，但我觉得还是Native好。）
+* KVC / KVO 面试题及答案（这东西除了会用还要会答）
+* Core 系列（CGraphic, CAnimation, CTtext, CFoundation, CData就不建议使用了）
+* OpenGL ES 编程
+* 逆向与安全（class-dump / Reveal / iOS Class Guard）
+* 调试与持续集成（Instruments / Test Case / Bugly / Jenkins）
 
 #### Front-End 技术栈：
-	• HTML
-	• CSS
-	• jQuery
+* HTML 5 / CSS 3 / ES 6 规范
+* JavaScript / jQuery 简单了解
 
 #### Ruby 技术栈：
-	• Rails
-	• Passenger
+* rvm / gem
+* Rails / Rake
+* Passenger
 
 #### Python 技术栈：
-	• Flask
-	• 分析页面抓取内容。
+* pip
+* virtualenv / virtualenvwrapper
+* Flask / Restful / Requests
+* uWSGI / gUnicorn
+* Scrapy 简单了解
 
 #### DBA 技术栈：
-	• MySQL 只会用，不会并发优化。
-	• Rails 中集成过PostgreSQL。
-	• Flask 中集成过Redis。
+* MySQL 熟悉语法
+* PostgreSQL 学习中
+* Redis 了解语法
 
 #### Linux 技术栈：
-	• 主力开发 MacBook、备用 Ubuntu14.04LTS。
-	• 有自己的阿里云 ECS（自定义 CentOS 7.2）。
-	• 熟悉 Git、SecureShell、Apache。
-	• 惯用zsh，vi 略懂，emacs、nano不常用。
+* CentOS 7.3 / Ubuntu 14.04 LTS
+* Docker
+* NginX
+* ssh / git / ftp
+* 了解网络协议 / RFC 2616-2617
+* Vim 使用 / .vimrc 配置
+* 阿里云 / AWS
 
 #### 其他：
-	• 现用基于 Jekyll 的博客，Hexo、Wordpress 都用过。
-	• 在朋友的 AWS EC2 上实操过 Docker。
-	• 熟练使用 markdown 写文档（包括扩展语法）。
-	• HHKB 坑中人。
+* Jekyll / Hexo / Wordpress 
+* Markdown
+* HHKBer
 
 ### 联系方式：
 
