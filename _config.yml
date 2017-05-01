@@ -73,7 +73,7 @@ permalink:   /:title #/:categories/:title
 
 prose:
   rooturl: '_posts'
-  siteurl: 'http://blog.xenonchau.com/'
+  siteurl: 'http://blog.xenonchau.com'
   relativeLinks: 'http://blog.xenonchau.com/links.jsonp'
   media: 'images'
   metadata:
