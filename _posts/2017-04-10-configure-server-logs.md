@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "阿里云服务器配置日志"
-description: "Linux 的权限分配——包括用哪些用户来运行哪些服务。秉承着最小权限原则（Least Priviledge）来设置每个目录的权限，分配每个服务的运行者。简述了 ssh 远程登录的操作和需要注意的问题。熟悉了一些编译源码来安装软件包的方法，引申出来的问题学会了如何创建临时 swap 区。想要统一修改 Gemfile 的源，学习到了 find exec 后面跟着的 xargs 参数 以及 sed -i -e 的用法。学会了如何编译安装 PHP7 以及编译时所加参数的意义，学会了开启 fpm 跟 NginX 联动，学会了如何编译安装新插件。学习到了如何在一台服务器上使用 NginX 开启多个不同的 web server，并且绑定不同的域名。"
+description: "Linux, MySQL, Least Priviledge, ssh, swap, Gemfile, find exec xargs 参数, sed -i -e, PHP-fpm, NginX."
 headline: 
 modified: 2017-04-10
 category: Linux
