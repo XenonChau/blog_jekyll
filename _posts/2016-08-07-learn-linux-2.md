@@ -2,7 +2,7 @@
 layout: post
 title:  "一点Linux学习心得（组合键篇）"
 description: 
-modified:   2016-08-20 09：20：38 +0800
+modified:   2016-08-20 09:20:38 +0800
 categories: Linux
 tags: [基础]
 ---

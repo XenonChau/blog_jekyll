@@ -1,15 +1,10 @@
 ---
 layout: post
 title: "UITableView的使用方法"
-description: "A ton of text to test readability."
+description: "UITableView"
+modified: 2013-05-18 21:17:03 +800
 category: Objective-C
 tags: [入门, 教程, OC, iOS]
-image:
-  feature: so-simple-sample-image-2.jpg
-  credit: Michael Rose
-  creditlink: http://mademistakes.com
-comments: false
-share: false
 ---
 
 > 序：看了许多教程，觉得TableView是iOS系统里非常常用的控件。它的cell复用机制可以有效的节约内存。
@@ -97,7 +92,7 @@ share: false
 
 {% highlight objc %}
 
-
+// 2017-05-02 更新：本文使用 Liquid 语法书写的代码块，所以在我自定义的 css 下，看起来样式会和其他的文章有些不同。以后慢慢完善 css 文件吧。也许没有以后了（笑
 
 {% endhighlight %}
 

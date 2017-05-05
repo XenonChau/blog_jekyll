@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "objc_msgSend消息传递学习笔记 (消息转发)"
-modified:   2016-09-02 14：31：00 +0800
+modified:   2016-09-02 14:31:00 +0800
 categories: Objective-C articles
 tags: [转载, OC, iOS, 理论]
 ---

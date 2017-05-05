@@ -8,7 +8,7 @@ chart: true
 ---
 <figure>
   <img src="{{ site.url }}/images/about/summon.jpg" alt="Xenon Chau">
-  <figcaption>图片来源见水印: [3lian](http://www.3lian.com)</figcaption>
+  <figcaption>图片来源见水印: http://www.3lian.com</figcaption>
 </figure>
 
 {% assign total_words = 0 %}

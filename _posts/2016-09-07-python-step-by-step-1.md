@@ -2,7 +2,7 @@
 layout: post
 title:  "Python3 学习笔记（一）——环境搭建篇"
 description:
-modified:   2016-09-07 10：12：00 +0800
+modified:   2016-09-07 10:12:00 +0800
 categories: Python
 tags: [基础, 入门, 运维, 后端]
 ---
