@@ -112,7 +112,7 @@ IMP _class_lookupMethodAndLoadCache3(id obj, SEL sel, Class cls){
 
 这里还要注意一点，就是关于 `Cache` 的默认参数是 `NO` ，因为在 `objc_msgSend` 中已经进行过缓存查询。以下是 `objc_msgSend` 的汇编实现：
 
-```
+```objc
 ENTRY	_objc_msgSend
 	     MESSENGER_START
 	     // NilTest:宏，判断被发送消息的对象是否为nil。
@@ -139,7 +139,7 @@ END_ENTRY	_objc_msgSend
 
 趁热打铁，再来看一下 `MethodTableLoopup` 这个宏的实现
 
-```
+```objc
 .macro MethodTableLookup
 	   MESSENGER_END_SLOW
 	   SaveRegisters

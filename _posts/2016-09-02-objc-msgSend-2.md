@@ -43,7 +43,7 @@ if (resolver  &&  !triedResolver) {
 ```
 `runtimeLock.unlockRead()` 是释放读入锁操作，这里是指缓存读入，即缓存机制不工作从而不会有缓存结果。随后进入 `_class_resolveMethod(cls, sel, inst)` 方法。
 
-```
+```objc
 void _class_resolveMethod(Class cls, SEL sel, id inst) {
 	// 用 isa 查看是否指向元类 Meta Class
     if (! cls->isMetaClass()) {
@@ -67,7 +67,7 @@ void _class_resolveMethod(Class cls, SEL sel, id inst) {
 
 而上述代码中的 `_class_resolveInstanceMethod` 方法，我们从源码中看到是如此定义的：
 
-```
+```objc
 static void _class_resolveInstanceMethod(Class cls, SEL sel, id inst) {
 	// 首先查找是否有 resolveInstanceMethod 方法
     if (! lookUpImpOrNil(cls->ISA(), SEL_resolveInstanceMethod, cls, 
@@ -109,7 +109,7 @@ static void _class_resolveInstanceMethod(Class cls, SEL sel, id inst) {
 
 我们发现，最终都会返回到 `objc_msgSend` 中。反观一下上一篇文章写的 `objc_msgSend` 函数，是通过汇编语言实现的。在 [Let’s build objc_msgsend](https://www.mikeash.com/pyblog/friday-qa-2012-11-16-lets-build-objc_msgsend.html) 这篇资料中，记录了一个关于 `objc_msgSend` 的伪代码。
 
-```
+```objc
 id objc_msgSend(id self, SEL _cmd, ...) {
 	Class c = object_getClass(self);
 	IMP imp = cache_lookup(c, _cmd);
@@ -121,7 +121,7 @@ id objc_msgSend(id self, SEL _cmd, ...) {
 
 在缓存中无法直接击中 `IMP` 时，会调用 `class_getMethodImplementation` 方法。在 runtime 中，查看一下 `class_getMethodImplementation` 方法。
 
-```
+```objc
 IMP class_getMethodImplementation(Class cls, SEL sel)
 {
     IMP imp;
@@ -143,7 +143,7 @@ IMP class_getMethodImplementation(Class cls, SEL sel)
 
 `_objc_msgForward` 居然可以返回，说同 `IMP` 一样是一个指针。在 `objc-msg-x86_64.s` 中发现了其汇编实现。
 
-```
+```objc
 ENTRY	__objc_msgForward
 // Non-stret version
 // 调用 __objc_forward_handler
@@ -175,7 +175,7 @@ void *_objc_forward_handler = (void*)objc_defaultForwardHandler;
 而抛开 runtime ，看见了关键字 `__attribute__((noreturn))` 。这里简单介绍一下 GCC 中的又一扩展 `__attribute__` 机制 。它用于与编译器直接交互，这是一个编译器指令(Compiler Directive)，用来在函数或数据声明中设置属性，从而进一步进行优化(继续了解可以阅读 [NShipster __attribute__](http://nshipster.com/__attribute__/))。而这里的 `__attribute__((noreturn))` 是告诉编译器此函数不会返回给调用者，以便编译器在优化时去掉不必要的函数返回代码。
 `Handler` 的全部工作是记录日志、触发 crash 机制。如果开发者想实现消息转发，则需要重写 `_objc_forward_handler` 中的实现。这时引入 `objc_setForwardHandler` 方法：
 
-```
+```objc
 void objc_setForwardHandler(void *fwd, void *fwd_stret) {
     _objc_forward_handler = fwd;
 #if SUPPORT_STRET
@@ -189,7 +189,7 @@ void objc_setForwardHandler(void *fwd, void *fwd_stret) {
 
 引入 `objc_setForwardHandler` 方法后，会有一个疑问：如何调用它？先来看一段异常信息：
 
-```console
+```shell
 2016-08-27 08:26:08.264 debug-objc[7013:29381250] -[DGObject test_no_exist]: unrecognized selector sent to instance 0x101200310
 2016-08-27 10:09:16.495 debug-objc[7013:29381250] *** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '-[DGObject test_no_exist]: unrecognized selector sent to instance 0x101200310'
 *** First throw call stack:
@@ -206,7 +206,7 @@ void objc_setForwardHandler(void *fwd, void *fwd_stret) {
 libc++abi.dylib: terminating with uncaught exception of type NSException
 ```
 
-这个日志场景都接触过。从调用栈上，发现了最终是通过 `Core Foundation` 抛出异常。在 `Core Foundation` 的 `CFRuntime.c` 无法找到 `objc_setForwardHandler` 方法的调用入口。综合参看 [Objective-C 消息发送与转发机制原理](http://yulingtianxia.com/blog/2016/06/15/Objective-C-Message-Sending-and-Forwarding/) 和 [Hmmm, What’s that Selector?](http://arigrant.com/blog/2013/12/13/a-selector-left-unhandled) 两篇文章，我们发现了在 [CFRuntime.c](https://github.com/opensource-apple/CF/blob/master/CFRuntime.c) 的 `__CFInitialize()` 方法中，实际上是调用了 `objc_setForwardHandler` ，这段代码被苹果公司隐藏。
+这个日志场景都接触过。从调用栈上，发现了最终是通过 `Core Foundation` 抛出异常。在 `Core Foundation` 的 `CFRuntime.c` 无法找到 `objc_setForwardHandler` 方法的调用入口。综合参看 [《Objective-C 消息发送与转发机制原理》](http://yulingtianxia.com/blog/2016/06/15/Objective-C-Message-Sending-and-Forwarding/) 和 [《Hmmm, What’s that Selector?》](http://arigrant.com/blog/2013/12/13/a-selector-left-unhandled) 两篇文章，我们发现了在 [CFRuntime.c](https://github.com/opensource-apple/CF/blob/master/CFRuntime.c) 的 `__CFInitialize()` 方法中，实际上是调用了 `objc_setForwardHandler` ，这段代码被苹果公司隐藏。
 
 在上述调用栈中，发现了在 `Core Foundation` 中会调用 `___forwarding___` 。根据资料也可以了解到，在 `objc_setForwardHandler` 时会传入 `__CF_forwarding_prep_0` 和 `___forwarding_prep_1___` 两个参数，而这两个指针都会调用 ____forwarding___ 。这个函数中，也交代了消息转发的逻辑。在 [Hmmm, What’s that Selector?](http://arigrant.com/blog/2013/12/13/a-selector-left-unhandled) 文章中，复原了 `____forwarding___` 的实现。
 

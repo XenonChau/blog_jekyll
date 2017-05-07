@@ -126,7 +126,38 @@ struct objc_category {
 typedef struct objc_property *objc_property_t;
 
 // 在本类中未定义其结构体内容
+// 相关方法：
+objc_property_t class_getProperty(Class cls, const char *name)
 ```
+
+这里我们来举个栗子：
+
+比如我们在项目中使用开源库 [MJExtension](https://github.com/CoderMJLee/MJExtension) 来解析 model ，有时后台返回的 JSON 数据中包含了 `id` 字段。而 `id` 又是 OC 的系统保留关键字，所以一般的做法是将 `id` 替换成 `ID`：
+
+```objc
+[XXXModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+                return @{
+                         @"ID": @"id",
+                         };
+            }];
+```
+
+*每一个请求回来的数据都要这么写，不累么？*
+
+根据 OC 的动态特性，我们可以在 BaseModel 中判断子类中是否声明了 `ID` 的属性，并将其统一由上述方法来进行替换，代码如下：
+
+```objc
+Class currentClass = object_getClass(self);
+if (class_getProperty(currentClass, "ID")) {
+    [currentClass mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+        return @{
+            @"ID" : @"id",
+            };
+    }];
+}
+```
+
+这样，你的 model 中就再也不用去考虑 `id` 转换的问题了。
 
 接下来 `runtime.h` 中提到的是有关**类**、**协议**、**方法**以及**属性内部特征**的定义，以及其相关的操作。这里着重讲一下 **类** 和 **方法** 吧。
 
@@ -318,11 +349,14 @@ objc_removeAssociatedObjects(id object)
 
 ----------
 
+cat <<-'EOF'
 > 先虎头蛇尾一下：暂时先写这些吧……
 
 > 这几天项目比较紧～
 
 > 而且下面的多数都是参考别人的文章，等过几天有时间再来补全！
+
+EOF
 
 ----------
 

@@ -38,8 +38,9 @@ Hi, 我是 **Xenon Chau**, 一个 iOS 开发者, 这儿是我的博客. 全站�
 > 下面是我所持有的技术：
 
 #### Objective-C 技术栈：
-* Runtime
-* Runloop / GCD
+* [Runtime](/Delve-Into-Objc-1-Runtime)
+* Runloop
+* GCD
 * Block
 * Autolayout
 * CocoaPods
@@ -48,22 +49,22 @@ Hi, 我是 **Xenon Chau**, 一个 iOS 开发者, 这儿是我的博客. 全站�
 * 内存管理机制
 
 ##### 需要加强的地方（毕竟是主业）
-* <del>JSPatch</del>（已经被Apple干死了）
-* 对象模型（看了很多教程，什么isa啊，meta-class啊，IMP啊，但面试时候就是说不出来。）
+* <del>JSPatch</del>（已经被Apple干死了、前几天在面试的时候面试官提出了解决方案。）
 * Hybrid（怎么说呢，好多公司为了敏捷开发选择了Hybrid模式，但我觉得还是Native好。）
-* KVC / KVO 面试题及答案（这东西除了会用还要会答）
+* KVC / KVO 
 * Core 系列（CGraphic, CAnimation, CTtext, CFoundation, CData就不建议使用了）
 * OpenGL ES 编程
 * 逆向与安全（class-dump / Reveal / iOS Class Guard）
 * 调试与持续集成（Instruments / Test Case / Bugly / Jenkins）
 
 #### Front-End 技术栈：
-* HTML 5 / CSS 3 / ES 6 规范
-* JavaScript / jQuery 简单了解
+* HTML 5
+* CSS 3
+* JavaScript / ES 6 / jQuery / AngularJS
 
 #### Ruby 技术栈：
 * rvm / gem
-* Rails / Rake
+* Ruby on Rails
 * Passenger
 
 #### Python 技术栈：
@@ -77,6 +78,7 @@ Hi, 我是 **Xenon Chau**, 一个 iOS 开发者, 这儿是我的博客. 全站�
 * MySQL 熟悉语法
 * PostgreSQL 学习中
 * Redis 了解语法
+* ElasticSearch
 
 #### Linux 技术栈：
 * CentOS 7.3 / Ubuntu 14.04 LTS
@@ -97,4 +99,8 @@ Hi, 我是 **Xenon Chau**, 一个 iOS 开发者, 这儿是我的博客. 全站�
 如果你不幸走进了召唤法阵也没关系，简单的发个邮件给我，我就能救你出去了。
 
 <a href="mailto:me@xenonchau.com?subject=Hi, Xenon. 有兴趣到我司工作吗？">me@xenonchau.com</a>
+
+```
+git config --global alias.lg "log --color --graph --pretty=format:'%Cyellow%h%Creset -%Cgreen[%ad %cr]%Creset -%C(white)%s%Creset %C(red)%d%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=short"
+```
 

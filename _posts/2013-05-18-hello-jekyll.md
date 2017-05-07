@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Hello Jekyll!"
-description: "是的，我又换了一个新模板！"
+description: "博客, Jekyll, 模版, Notepad"
 modified: 2017-05-01
 category: "闲言碎语"
-imagefeature: cover6.jpg
+imagefeature: github_jekyll.jpg
 comments: false
-share: true
+share: false
 ---
 
 记录一下我第一次使用 Jekyll 创建博客成功。[2013-05-18]

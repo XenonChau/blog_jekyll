@@ -3,14 +3,15 @@ layout: post
 title:  "如何成为一个架构师"
 modified:   2016-07-17 22:31:02 +0800
 categories: articles
+imagefeature: mysterious_coder.jpeg
 tags: [转载, 知识储备]
 author: 西乔
 ---
 
-> 原文来自：[西乔的九卦](https://mp.weixin.qq.com/s?__biz=MzAxMzMxNDIyOA==&mid=508060063&idx=1&sn=020d41dc8744f1f73168dc3c66d7a7cb&scene=1&srcid=071888Std7JvCSZYzEkW9IRH&key=77421cf58af4a653858813748ada98c4f43f5834d0dd358252eb0f235104e5df39f2bf67decf93ee1797181f9d958d2c&ascene=0&uin=MjE1Nzc3MTk4MA%3D%3D&devicetype=iMac+MacBookAir6%2C2+OSX+OSX+10.11.5+build(15F34)&version=11020201&pass_ticket=iaO0KOkNEzdhLXfpxX7UK5orw%2BgIClaR9ie28AM1vpNCuEbEnLAcVe78I1ZEabu4)    
-> 很久以前有一天看过西乔的漫画，一口气看到后半夜！从此一追到底。因为同是程序员，所以能get到很多笑点。
+> 原文来自：[神秘的程序员们@微信公众号](https://mp.weixin.qq.com/s?__biz=MzAxMzMxNDIyOA==&mid=508060063&idx=1&sn=020d41dc8744f1f73168dc3c66d7a7cb&scene=1&srcid=071888Std7JvCSZYzEkW9IRH&key=77421cf58af4a653858813748ada98c4f43f5834d0dd358252eb0f235104e5df39f2bf67decf93ee1797181f9d958d2c&ascene=0&uin=MjE1Nzc3MTk4MA%3D%3D&devicetype=iMac+MacBookAir6%2C2+OSX+OSX+10.11.5+build(15F34)&version=11020201&pass_ticket=iaO0KOkNEzdhLXfpxX7UK5orw%2BgIClaR9ie28AM1vpNCuEbEnLAcVe78I1ZEabu4)    
+> 很久以前有一天看过西乔姐的漫画（[西乔的九卦](http://blog.xiqiao.info)），因为同是程序员，所以能get到很多笑点，于是一口气看到后半夜！从那以后就从博客追到了微信公众号。
 
-西乔的微信公众号二维码：    
+微信公众号传送门：    
 ![](http://blog.xiqiao.info/wp-content/uploads/2015/03/qrcode_for_gh_3a770c0bc91e_344.jpg)
 
 ## 架构师的技能矩阵
@@ -63,12 +64,27 @@ author: 西乔
   * 能够把“业务需求”翻译成“技术需求”，方便开发团队理解架构师的意图和战术。在项目进行过程中能监控各种变化，敏锐观察问题，并能牵头解决问题。
 * **文档能力**    
 
+> EOF
+
 ----------
 
-> **写在后面**
+> **我的感悟**
 
-自打今年年初 iOS 开始走下坡路开始，我就一直在寻求一个新的发展方向——当然，iOS 方向我还是会继续走下去的。也该到了多方面发展的时候了。如果一个 iOSer 连基本的 HTTP 协议都不了解，完全不知道后台到底是因为什么原因发给我这样的一个 JSON 数据……那这个程序员是没有出路的。
+自打今年年初 iOS 需求市场开始走下坡路起，我就一直在寻求一个新的发展方向——当然，iOS 方向我还是会继续走下去的。也该到了多方面发展的时候了。如果一个 iOSer 连基本的 HTTP 协议都不了解，完全不知道后台到底是因为什么原因发给我这样的一个 JSON 数据……那这个程序员是没有出路的。
 
 从去年开始我就陆陆续续的接触了 Linux 系统、PHP 基础语法和 ThinkPHP 、在网上简单的查了 TCP/IP 的构造、学了一点点 HTML/css 的皮毛，也看了一些 javascript , DOM , Ajax 等配套语言。现在还是处在一个迷茫期，完全不知道自己该走哪个方向 —— 偏技术向就走全栈、架构师，管理向就走产品经理、项目经理……
+
+不管如何，还是要稳扎稳打的学习 —— 世界变化很快，稍慢半拍就会被历史的车轮碾轧。
+
+<div style="
+marign:0 20% 0 20%; 
+text-align:center; 
+font-size:40px; 
+color:white; 
+padding:80px 0 80px 0; 
+background-color:#ee3333;
+">
+路漫漫其修远兮，吾将上下而求索。
+</div>
 
 
