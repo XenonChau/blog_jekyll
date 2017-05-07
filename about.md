@@ -62,6 +62,8 @@ Hi, 我是 **Xenon Chau**, 一个 iOS 开发者, 这儿是我的博客. 全站�
 * CSS 3
 * JavaScript / ES 6 / jQuery / AngularJS
 
+> Front-End 技术栈均为简单了解，暂时只能读懂代码但是还写不出来。自建网站中：[【Code 1 Bit】](http://code1bit.com)
+
 #### Ruby 技术栈：
 * rvm / gem
 * Ruby on Rails
@@ -100,7 +102,5 @@ Hi, 我是 **Xenon Chau**, 一个 iOS 开发者, 这儿是我的博客. 全站�
 
 <a href="mailto:me@xenonchau.com?subject=Hi, Xenon. 有兴趣到我司工作吗？">me@xenonchau.com</a>
 
-```
-git config --global alias.lg "log --color --graph --pretty=format:'%Cyellow%h%Creset -%Cgreen[%ad %cr]%Creset -%C(white)%s%Creset %C(red)%d%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=short"
-```
+
 
