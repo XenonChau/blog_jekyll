@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "深入学习 Objective-C (三) —— Hash Table"
-description: ""
+description: 
 modified: 2016-08-22 18:58:35 +0800
 category: [Objective-C, articles]
 tags: [理论, OC, iOS]
@@ -10,13 +10,13 @@ featured: false
 
 > 本文是系列学习笔记第三篇，回顾前文请查阅：
 > 
-> [深入学习 Objective-C (一) —— Runtime](/Delve-Into-Objc-1-Runtime)
+> [深入学习 Objective-C (一) —— Runtime]({{site.url}}{{site.baseurl}}/Delve-Into-Objc-1-Runtime)
 > 
-> [深入学习 Objective-C (二) —— Object](/Delve-Into-Objc-1-Object)
+> [深入学习 Objective-C (二) —— Object]({{site.url}}{{site.baseurl}}/Delve-Into-Objc-1-Object)
 
 # 概览
 
-Objective-C 中有关 `NSDictionary` 等容器的实现，是交由 **哈希表** 又称 **散列表** (Hash Table[^1]) 来实现的。
+Objective-C 中有关 `NSDictionary` 等容器的实现，是交由 **哈希表** 又称 **散列表** aka: Hash Table [^1] 来实现的。
 
 # Hash 算法
 
@@ -48,6 +48,6 @@ Objective-C 中有关 `NSDictionary` 等容器的实现，是交由 **哈希表*
 
 当时写这个博客的时候是不是有点太自大了？留给我的时间并不多，但是我还是不要浮躁，继续努力吧！这篇博文在未来的某个时间内我会重新开一篇的。（届时会把这篇文章的标题修改掉！
 
-[^1]: [Wikipeida : Hash table](https://en.wikipedia.org/wiki/Hash_table#Separate_chaining_with_linked_lists)  |  [维基百科：散列表](https://zh.wikipedia.org/wiki/哈希表)
+[^1]: [Wikipedia : Hash table](https://en.wikipedia.org/wiki/Hash_table#Separate_chaining_with_linked_lists) （中文版：[维基百科：散列表](https://zh.wikipedia.org/wiki/哈希表)）
 
 
