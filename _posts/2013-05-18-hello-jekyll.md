@@ -15,24 +15,28 @@ imagefeature: github_jekyll.jpg
 
 Liquid 语言是一种标记语言, 将模板转化为相应的代码从而进行相关的”编译”. Liquid 使用 Ruby 编写而成.
 Liquid 语言有两大类标记: 一种是结果型 (Output), 一种是语句型, 前者进行输出为 text , 后者主要进行语句相关操作,如 `if`, `for` 等.
-Output 型使用 `{{ output }}` 进行, 而 Tag 型则采用 `{\% tag \%}`.
+Output 型使用 `{%raw%}{{ output }}{%endraw%}` 进行, 而 Tag 型则采用 `{%raw%}{% tag %}{%endraw%}`.
 
 常用语句：
 
-由于 Liquid 会直接解释相应语法，本文中的 `\` 请手动忽略。
+由于 Liquid 会直接解释相应语法，我是在 highlight 中嵌套了 raw 才实现的。
 
-```ruby
-{\{ site.url \}}/images/some_pic.jpeg # 定位 _config.yaml 中设置的 url， 即网站的网址。
-{\% include header.html \%} # 定位 _include 目录下的 header.html。
-```
+{% highlight python linenos %}
+{% raw %}
+{{ site.url }}/images/some_pic.jpeg # 定位 _config.yaml 中设置的 url， 即网站的网址。
+{% include header.html %} # 定位 _include 目录下的 header.html。
+{% endraw %}
+{% endhighlight %}
 
-```ruby
-{\% highlight ruby linenos \%} # 语法高亮，语言名称，显示行号
-    # 中间的代码格式会保留，会根据语言名称来选择高亮某些关键字。
-{\% endhighlight \%} # 高亮区域结束
-```
+{% highlight python linenos %}
+{% raw %}
+{% highlight ruby linenos %} # 语法高亮，语言名称，显示行号
+    {% comment %}中间的代码格式会保留，会根据语言名称来选择高亮某些关键字。 {% endcomment %}
+{% endhighlight %} # 高亮区域结束
+{% endraw %}
+{% endhighlight %}
 
-其语法和 Ruby 语言如出一辙（毕竟是用 ruby 写的）。
+不难看出其语法和 Ruby 语言如出一辙（毕竟是用 ruby 写的）。
 
 ## YAML
 

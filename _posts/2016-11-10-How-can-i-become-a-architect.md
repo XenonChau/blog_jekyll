@@ -2,7 +2,7 @@
 layout: post
 title:  "如何成为一个架构师"
 modified:   2016-11-10 22:31:02 +0800
-categories: articles
+categories: Articles
 imagefeature: mysterious_coder.jpeg
 tags: [转载, 知识储备]
 author: 西乔

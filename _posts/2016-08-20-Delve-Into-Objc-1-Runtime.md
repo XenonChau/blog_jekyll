@@ -3,7 +3,7 @@ layout: post
 title: "深入学习 Objective-C (一) —— Runtime"
 description: ""
 modified: 2016-08-20 09:30:12 +0800
-category: [Objective-C, articles]
+category: [Objective-C, Articles]
 tags: [理论, OC, iOS]
 featured: true
 ---
@@ -17,13 +17,9 @@ featured: true
 
 ## 概览
 
-<figure>
-  <img src="{{ site.url }}/images/delve_into_objc/objc-headers.jpeg" alt="objc的头文件">
-  <figcaption>/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/include/objc
-  </figcaption>
-</figure>
+objc 所有的头文件可以在下述目录中找到。
 
-objc 所有的头文件可以在上述目录中找到。
+![]({{ site.url }}/images/delve_into_objc/objc-headers.jpeg)
 
 
 在上图中看到文件名跟 runtime 有关的有这几个：

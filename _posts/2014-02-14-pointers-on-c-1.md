@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "C语言漫谈（一）——C和指针"
+title:  "C语言漫谈（一）— — C和指针"
 modified:   2014-02-14 19:47:02 +0800
 categories: C
 tags: [基础]

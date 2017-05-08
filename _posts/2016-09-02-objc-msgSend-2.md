@@ -2,7 +2,7 @@
 layout: post
 title:  "objc_msgSend消息传递学习笔记 (消息转发)"
 modified:   2016-09-02 14:31:00 +0800
-categories: Objective-C articles
+categories: Objective-C Articles
 tags: [转载, OC, iOS, 理论]
 ---
 
@@ -21,7 +21,7 @@ Objective-C 在调用对象方法的时候，是通过消息传递机制来查�
 
 本文的研究目标：当 `Class` 对象的 `.h` 文件中声明了成员方法，但是没有对其进行实现，来跟踪一下 runtime 的消息转发过程。于是创造一下实验场景：
 
-同上一篇文章一样，定义一个自定义 `Class` `DGObject` ，并且声明该 `Class` 中拥有方法 `- (void)test_no_exist;` ，而在 `.m` 文件中不给予实现。在 `main.m` 入口中直接调用该类某实例的 `- (;void)test_no_exist` 方法。
+同上一篇文章一样，定义一个自定义 `Class` `DGObject` ，并且声明该 `Class` 中拥有方法 `- (void)test_no_exist;` ，而在 `.m` 文件中不给予实现。在 `main.m` 入口中直接调用该类某实例的 `- (void)test_no_exist;` 方法。
 
 ![]({{site.url}}{{site.baseurl}}/images/objc_msgSend/anno_test_method.jpg)
 
