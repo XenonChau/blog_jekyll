@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "一个\"PM\"的胡言乱语"
-modified:   2016-07-20 00:02:18 +0800
+modified:   2015-09-20 00:02:18 +0800
 categories: 闲言碎语
 tags: 
 imagefeature: steve_jobs.jpg

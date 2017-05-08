@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "KVC && KVO"
-modified:   2013-08-21 20:17:03 +0800
+modified:   2014-05-11 20:17:03 +0800
 categories: Objective-C
 ---
 
@@ -18,8 +18,6 @@ KVC / KVO 的操作方法分别由 `NSKeyValueCoding` / `NSKeyValueObServing` �
 KVC，即是指 [NSKeyValueCoding](https://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Protocols/NSKeyValueCoding_Protocol/Reference/Reference.html) ，一个非正式的 Protocol，提供一种机制来间接访问对象的属性。KVO 就是基于 KVC 实现的关键技术之一。
 
 KVC 运用了一个 `isa-swizzling` 技术。`isa-swizzling` 就是类型混合指针机制。KVC 主要通过 `isa-swizzling` ，来实现其内部查找定位的。`isa` 指针，如其名称所指（就是"is a"的意思），指向维护分发表的对象的类。该分发表实际上包含了指向实现类中的方法的指针和其它数据。
-
-> 扩展阅读：[《Objective-C内存布局》 - 课蜜黄蜂@博客园](http://www.cnblogs.com/csutanyu/archive/2011/12/12/Objective-C_memory_layout.html)
 
 ###  使用方法
 
@@ -84,5 +82,7 @@ KVO，即使指 [NSKeyValueObserving](https://developer.apple.com/library/mac/do
 ## End Words
 
 `Objective-C` 中 `runtime` 机制也是一个非常值得深入研究的东西，希望我能真正的理解其中一部分，届时我会写一篇博客来记录一下的。
+
+> 刚到北京，还有些不适应北京的天气。这才刚过5月就好像进了夏天！记得刚来的那几日天天咳，好像要把肺叶都咳出来似的，特别的怀念大连的天气，还好最近有些习惯了，这一下子就用高温来打击我的信心！忍一忍，赚够钱回家娶媳妇～（笑
 
 

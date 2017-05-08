@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Linux 目录结构"
+title:  "一点Linux学习心得（目录结构）"
 description:
 modified:   2016-10-23 21:51:30 +0800
 categories: Linux

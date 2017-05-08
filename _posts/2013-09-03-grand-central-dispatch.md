@@ -8,7 +8,7 @@ categories: Objective-C
 > [Grand Central Dispatch (GCD) Reference](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html)
 
 
-最近用到了很多需要异步处理的事件。 iOS 集成了几种不同的异步操作，搜索了半天觉得 GCD 这个方式比较适合处理公司业务。 于是抽时间搜了些博客，翻阅了API，准备简单的“罗列”一下 GCD 的几种使用方法。
+最近用到了很多需要异步处理的事件。 iOS 集成了几种不同的异步操作，搜索了半天觉得 GCD 这个方式比较适合处理公司业务。 于是抽时间搜了些博客，翻阅了 API，准备简单的“罗列”一下 GCD 的几种使用方法。
 
 首先来看一下系统预置了3个代码块：
 
