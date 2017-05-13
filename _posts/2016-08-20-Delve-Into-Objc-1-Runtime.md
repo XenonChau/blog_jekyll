@@ -6,6 +6,7 @@ modified: 2016-08-20 09:30:12 +0800
 category: [Objective-C, Articles]
 tags: [理论, OC, iOS]
 featured: true
+comments: true
 ---
 
 翻了翻之前的博客，感觉那些都不是我写的……（捂脸
@@ -290,40 +291,58 @@ objc_getAssociatedObject(id object, const void *key)
 objc_removeAssociatedObjects(id object)
 ```
 
-看方法名就知道其作用了，那么我们来尝试着使用一下，向 `NSObject` 中添加一个 `tag` 属性：
+看方法名就知道其作用了，那么我们来尝试着使用一下，向 `NSObject` 中添加一个 `someProperty` 属性：
 
 ```objc
-// NSObject+Tag.h
-@interface NSObject (tag)
-@property (assign, nonatomic) int tag;
+// NSObject+SomeProperty.h
+@interface NSObject (SomeProperty)
+@property (copy, nonatomic) NSString *someProperty;
 @end
 ```
 
 ```objc
-// NSObject+Tag.m
-#import "NSObject+Tag.m"
+// NSObject+SomeProperty.m
+#import "NSObject+SomeProperty.m"
 #import <objc/runtime.h>
 
-@implementation NSObject (tag)
-@dynamic tag;
+@implementation NSObject (someProperty)
+@dynamic someProperty;
 
-- (void)setTag:(int)aTag {
+- (void)setSomeProperty:(NSString *)newProperty {
      objc_setAssociatedObject(self, 
-                              _cmd, // const void *key
-                              aTag, 
-                              OBJC_ASSOCIATION_ASSIGN_NONATOMIC //objc_AssociationPolicy policy
+                              @selecto(someProperty), // const void *key
+                              newProperty, 
+                              OBJC_ASSOCIATION_COPY_NONATOMIC //objc_AssociationPolicy policy
                               ); 
 }
 
-- (int)tag {
+- (NSString *)someProperty {
     return objc_getAssociatedObject(self, _cmd);
 }
 @end
 ```
 
-- `_cmd`: 它代表当前方法的 `selector`，正如同 `self` 表示当前方法调用的对象实例。
+- 如果需要定义 枚举型 (NS_ENUM aka.NSInteger)，请使用 `NSNumber` 类型进行操作。
 
-关于 `key` 的要求通常推荐是 `static`、 `char`，指针类型的当然更好了。只要是确保它是**不变的**、**唯一的**、而且在 setter / getter 内能被访问到的 —— 使用 `_cmd` 是一个最简便的方法了。
+```
+objc_setAssociatedObject(self, 
+                         @selector(someEnum),
+                         @(someEnum),
+                         OBJC_ASSOCIATION_ASSIGN);
+```
+
+- 如果需要定义 结构体 (struct)，请使用 `(__bridge 'structType')` 进行类型转换。
+
+```
+objc_setAssociatedObject(self, 
+                         @selector(someStruct),
+                         (_bridge 'structType')someStruct,
+                         OBJC_ASSOCIATION_ASSIGN);
+```
+
+- `_cmd`: 它代表当前方法的 `selector`，正如同 `self` 表示当前方法调用的对象实例。setter 方法只需要调用 `@selector(getter)` 即可。
+
+> 关于 `key` 的要求通常推荐是 `static`、 `char`，指针类型的当然更好了。只要是确保它是**不变的**、**唯一的**、而且在 setter / getter 内能被访问到的 —— 使用 `_cmd` 是一个最简便的方法了。
 
 有关 
 

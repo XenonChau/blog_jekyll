@@ -2,7 +2,7 @@ locale:           "cn"
 title:            "Life is short, not int."
 description:      "Live Long and Prosper"
 logo:             logo.png
-# disqus_shortname: Xenon
+disqus_shortname: xenonchau
 share:            false # 分享链接
 dropcap:			    false # 首字母大写
 # Change url to your domain. Leave localhost server or blank when working locally.
@@ -16,7 +16,7 @@ owner:
   avatar:         RedTiger.jpg
   email:          me@xenonchau.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    Alzheimer's Coder(🙃). Mostly coding in Objective-C. More practice in coding Python recently. Linux system operation engineer intern. <br />Mainten another website <a href=http://code1bit.com>Code 1 Bit</a>
+  description:    Alzheimer's Coder(🙃). Mostly coding in Objective-C. More practice in coding Python recently. Linux system operation engineer intern. <br />Maintaining another website <a href=http://code1bit.com>Code 1 Bit</a>
   # Social networking links used in footer. Update and remove as you like.
   # twitter:        XenonChau
   # facebook:       XenonChau
@@ -157,7 +157,7 @@ prose:
         field:
           element: "checkbox"
           label: "Comments"
-          value: false
+          value: true
 
 
 include: [".htaccess"]

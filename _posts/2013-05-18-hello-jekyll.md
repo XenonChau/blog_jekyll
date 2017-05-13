@@ -5,6 +5,7 @@ description: "博客, Jekyll, 模版, Notepad"
 modified: 2013-05-18
 category: "闲言碎语"
 imagefeature: github_jekyll.jpg
+comments: true
 ---
 
 > 记录一下我第一次使用 Jekyll 创建博客成功。

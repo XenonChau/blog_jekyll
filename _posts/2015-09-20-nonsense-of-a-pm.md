@@ -5,6 +5,7 @@ modified:   2015-09-20 00:02:18 +0800
 categories: 闲言碎语
 tags: 
 imagefeature: steve_jobs.jpg
+comments: true
 ---
 
 

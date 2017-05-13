@@ -7,6 +7,7 @@ modified: 2017-04-10
 category: Linux
 tags: [运维, 基础, 入门, 教程, 流水账]
 featured: true
+comments: true
 ---
 
 
