@@ -2,7 +2,7 @@
 layout: post
 title:  "WWDC 2013 Session笔记 - Xcode5和ObjC新特性"
 date:   2013-06-13 21:00:08 +0800
-categories: Objective-C Articles
+categories: Articles
 tags: [转载, 知识储备]
 author: 王巍
 ---

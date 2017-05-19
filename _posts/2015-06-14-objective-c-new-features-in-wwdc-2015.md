@@ -2,7 +2,7 @@
 layout: post
 title:  "2015 Objective-C 新特性"
 modified:   2015-06-14 10:02:01 +0800
-categories: Objective-C Articles
+categories: Articles
 tags: [转载, 知识储备]
 author: 孙源
 ---

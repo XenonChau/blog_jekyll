@@ -3,7 +3,7 @@ layout: post
 title: "深入学习 Objective-C (三) —— Hash Table"
 description: 
 modified: 2016-08-22 18:58:35 +0800
-category: [Objective-C, Articles]
+category: [Objective-C]
 tags: [理论, OC, iOS]
 featured: false
 ---

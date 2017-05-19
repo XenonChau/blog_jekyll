@@ -3,7 +3,7 @@ layout: post
 title: "深入学习 Objective-C (二) —— Object"
 description: ""
 modified: 2016-08-21 16:03:46 +0800
-category: [Objective-C, Articles]
+category: [Objective-C]
 tags: [理论, OC, iOS]
 featured: true
 ---

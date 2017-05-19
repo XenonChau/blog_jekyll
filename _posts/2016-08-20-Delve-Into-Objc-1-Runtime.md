@@ -3,7 +3,7 @@ layout: post
 title: "深入学习 Objective-C (一) —— Runtime"
 description: ""
 modified: 2016-08-20 09:30:12 +0800
-category: [Objective-C, Articles]
+category: [Objective-C]
 tags: [理论, OC, iOS]
 featured: true
 comments: true
