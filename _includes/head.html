@@ -87,3 +87,21 @@
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.url }}/images/apple-touch-icon-114x114-precomposed.png">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.url }}/images/apple-touch-icon-144x144-precomposed.png">
+
+<!-- Title change -->
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '( ᵒ̴̶̷̥́ㅿᵒ̴̶̷̣̥̀ ) お願い、行かないで～';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'ฅ́˘ฅ̀～Meo♡ おかえりなさい';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>

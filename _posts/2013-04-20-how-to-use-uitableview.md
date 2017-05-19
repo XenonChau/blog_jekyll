@@ -2,7 +2,7 @@
 layout: post
 title: "UITableView的使用方法"
 description: "UITableView"
-modified: 2012-05-18 21:17:03 +8000
+modified: 2012-04-20 11:52:31 +8000
 category: Objective-C
 tags: [入门, 教程, OC, iOS]
 ---

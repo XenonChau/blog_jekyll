@@ -52,7 +52,7 @@ links:
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Asia/Shanghai
 future:      true # 这个地方支持先写后发布。
-highlighter: pygments
+highlighter: rouge
 markdown:    kramdown
 paginate:    5
 paginate_path: "page:num"
@@ -157,7 +157,7 @@ prose:
         field:
           element: "checkbox"
           label: "Comments"
-          value: true
+          value: false
 
 
 include: [".htaccess"]
