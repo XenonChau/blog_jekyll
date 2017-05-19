@@ -42,7 +42,7 @@ Hi, 我是 **Xenon Chau**, 一个 iOS 开发者, 这儿是我的博客. 全站�
 * Runloop
 * GCD
 * Block
-* Autolayout
+* [Autolayout](/resolution-fit-for-ios)
 * CocoaPods
 * 设计模式
 * 事件响应流程、消息传递方式
@@ -62,7 +62,7 @@ Hi, 我是 **Xenon Chau**, 一个 iOS 开发者, 这儿是我的博客. 全站�
 * CSS 3
 * JavaScript / ES 6 / jQuery / AngularJS
 
-> Front-End 技术栈均为简单了解，暂时只能读懂代码但是还写不出来。自建网站中：[【Code 1 Bit】](http://code1bit.com)
+> Front-End 技术栈均为简单了解，暂时只能读懂代码但是还写不出来。自建网站中：[【Code 1 Bit】](http://code1bit.com "如果你看到 502 Bad Gateway 那说明我代码还没部署。")
 
 #### Ruby 技术栈：
 * rvm / gem
