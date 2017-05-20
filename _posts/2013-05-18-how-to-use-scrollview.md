@@ -2,7 +2,7 @@
 layout: post
 title: "UIScrollView的使用方法"
 description: "UIScrollView"
-modified: 2012-05-18 21:17:03 +8000
+modified: 2013-05-18 21:17:03 +8000
 category: Objective-C
 tags: [入门, 教程, OC, iOS]
 ---

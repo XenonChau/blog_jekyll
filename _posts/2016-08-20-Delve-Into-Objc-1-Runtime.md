@@ -10,9 +10,12 @@ comments: true
 ---
 
 翻了翻之前的博客，感觉那些都不是我写的……（捂脸
+
+> [30天学会Objecitve-C](/learn-oc-in-30-days)  
 > [UITableView的使用方法](/how-to-use-uitableview)  
-> [KVC && KVO](key-value-observing-pattern)  
-> [强大的多线程编程－－GCD](grand-central-dispatch)
+> [UIScrollView的使用方法](/how-to-use-scrollview)  
+> [KVC && KVO](/key-value-observing-pattern)  
+> [强大的多线程编程－－GCD](/grand-central-dispatch)  
 
 但是不管如何，这都是我人生中的一部分，我可以对文字进行修改但是我不能删掉它们来否认这个过程。所以从今天开始，我就慢慢总结一下这几年学到的 OC 更深层的一些东西吧。
 
