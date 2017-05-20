@@ -2,7 +2,7 @@
 layout: post
 title: "Hello Jekyll!"
 description: "博客, Jekyll, 模版, Notepad"
-modified: 2013-05-18
+modified: 2013-10-31
 category: "闲言碎语"
 imagefeature: github_jekyll.jpg
 comments: true
