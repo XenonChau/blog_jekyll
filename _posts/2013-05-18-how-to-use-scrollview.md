@@ -4,7 +4,7 @@ title: "UIScrollView的使用方法"
 description: "UIScrollView"
 modified: 2013-05-18 21:17:03 +8000
 category: Objective-C
-tags: [入门, 教程, OC, iOS]
+tags: [入门, OC, iOS]
 ---
 
 > 序：上一次我们提到过UITableView，通过查看头文件发现它是继承于UIScrollView的子类，为了更好的深入研究，我决定一层层的向下深入研究。
