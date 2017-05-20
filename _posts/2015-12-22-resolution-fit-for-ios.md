@@ -88,6 +88,8 @@ NSString *constraintString = @"H:|-20-[find]-10-[findNext]-10-[findField(>=30)]-
 1. 设置约束之前，一定要让该对象被 `addSubview` 过。
 2. UIScorllView 的 IB 约束会出现 `Ambiguous Layout` 警告！尝试了一种很 low 的解决方案，但是我觉得其成本不如用代码来实现划算。
 3. 对于有些因为 UI 的不确定性导致的约束冲突，可以降低发生冲突的对象的某个约束的优先级。
+4. 如果要使用约束来进行布局，一定要设置 `view.translatesAutoresizingMaskIntoConstraints = NO;`，禁止 `AutoresizingMask` 自动转化。
+5. iOS 8 以后的激活约束的方式变成了 `[NSLayoutConstraints activateConstraints:]` 。之前的写法 `[view addConstraints:]` 已经不建议使用了，不过为了兼容 iOS 6 和 7 ，最好写一个编译时宏来判断一下。
 
 ### Masonry
 
@@ -121,7 +123,7 @@ Masonry 中链式调用实际上就是在每一步操作的方法中返回一个
 
 这个方法最终会调用 `-constraint:addConstraintWithLayoutAttribute:` 这个方法，最终返回值就是类本身 `MASConstraint *` 这样就可以实现无限的链式调用了。
 
-Masonry 是对原生 Constraints 的封装，所以原生有的功能它都能实现。墙裂推荐一下这个开源库，并且建议同学们仔细阅读文档，同时阅读源码加深记忆。
+Masonry 是对原生 Constraints 的封装，所以原生有的功能它都能实现。也不用设置禁止 `AutoresizingMask` 的自动转换，也不用考虑激活约束的方式。只需要添加到 superview 上，直接使用！墙裂推荐同学们都是用这个开源库，并且建议同学们仔细阅读文档，同时阅读源码加深记忆。
 
 好啦，这次真的下课了！起立！
 
