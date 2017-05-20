@@ -98,7 +98,7 @@ Hi, 我是 **Xenon Chau**, 一个 iOS 开发者, 这儿是我的博客. 全站�
 
 ### 联系方式：
 
-如果你不幸走进了召唤法阵也没关系，简单的发个邮件给我，我就能救你出去了。
+如果你不幸走进了召唤法阵也没关系，看完[我的说明书](/about/resume_ios_cn)([Manuel of me](/about/resume_ios_en))，然后简单的发个邮件给我，我就能救你出去了。
 
 <a href="mailto:me@xenonchau.com?subject=Hi, Xenon. 有兴趣到我司工作吗？">me@xenonchau.com</a>
 
