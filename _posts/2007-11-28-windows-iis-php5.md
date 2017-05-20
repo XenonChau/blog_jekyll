@@ -1,7 +1,7 @@
 ---
 layout: post
-title: [转]Windows2000+IIS+PHP5配置全能空间的方法
-modified: 2007-11-28 21:17:33 +0800
+title: "[转]Windows2000+IIS+PHP5配置全能空间的方法"
+modified: 2007-11-28
 categories: Windows
 tags: [运维]
 comments: false

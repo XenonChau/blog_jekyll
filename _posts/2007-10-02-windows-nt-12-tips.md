@@ -2,7 +2,7 @@
 layout: post
 title: "[转]Windows NT网络维护技巧12则"
 description: "Windows, NT, 网络维护"
-modified: 2006-10-02
+modified: 2007-10-02
 category: Windows
 tags: [运维]
 comments: false
