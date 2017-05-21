@@ -2,7 +2,7 @@
 layout: post
 title: "30天学会Objective-C"
 description: "Objective-C"
-modified: 2012-12-11 11:52:31 +8000
+modified: 2011-12-11 11:52:31 +8000
 category: Objective-C
 tags: [入门, OC, iOS]
 ---
