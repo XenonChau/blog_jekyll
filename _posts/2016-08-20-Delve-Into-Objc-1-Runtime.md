@@ -345,7 +345,7 @@ objc_setAssociatedObject(self,
 
 - `_cmd`: 它代表当前方法的 `selector`，正如同 `self` 表示当前方法调用的对象实例。setter 方法只需要调用 `@selector(getter)` 即可。
 
-> 关于 `key` 的要求通常推荐是 `static`、 `char`，指针类型的当然更好了。只要是确保它是**不变的**、**唯一的**、而且在 setter / getter 内能被访问到的 —— 使用 `_cmd` 是一个最简便的方法了。
+> 关于 `key` 的要求通常推荐是 `static`、 `const char *`，指针类型的当然更好了。只要是确保它是**不变的**、**唯一的**、而且在 setter / getter 内能被访问到的 —— 使用 `_cmd` 是一个最简便的方法了。
 
 有关 
 
