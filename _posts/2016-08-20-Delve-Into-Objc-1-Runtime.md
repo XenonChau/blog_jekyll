@@ -327,7 +327,7 @@ objc_removeAssociatedObjects(id object)
 
 - 如果需要定义 枚举型 (NS_ENUM aka.NSInteger)，请使用 `NSNumber` 类型进行操作。
 
-```
+```objc
 objc_setAssociatedObject(self, 
                          @selector(someEnum),
                          @(someEnum),
@@ -337,7 +337,7 @@ objc_setAssociatedObject(self,
 
 - 如果需要定义 结构体 (struct)，请使用 `(__bridge 'structType')` 进行类型转换。
 
-```
+```objc
 objc_setAssociatedObject(self, 
                          @selector(someStruct),
                          (_bridge 'structType')someStruct,
