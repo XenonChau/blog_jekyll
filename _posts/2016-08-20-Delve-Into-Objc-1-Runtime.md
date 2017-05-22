@@ -331,7 +331,8 @@ objc_removeAssociatedObjects(id object)
 objc_setAssociatedObject(self, 
                          @selector(someEnum),
                          @(someEnum),
-                         OBJC_ASSOCIATION_ASSIGN);
+                         OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+// 这里虽然是 int 类型的结构，但是我们用的 @(someEnum) 它是一个对象，需要对其进行 retain 操作。不然会出现野指针的情况。
 ```
 
 - 如果需要定义 结构体 (struct)，请使用 `(__bridge 'structType')` 进行类型转换。
