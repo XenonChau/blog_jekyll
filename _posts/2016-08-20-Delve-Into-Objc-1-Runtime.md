@@ -365,20 +365,99 @@ objc_setAssociatedObject(self,
 > [\[Fun With objc_setAssociatedObject and UIAlertView\]](http://www.wezm.net/technical/2011/12/fun-with-objc-setassociatedobject-and-uialertview/) - *WezM<sup>.net</sup>*    
 > [\[ObjC中_cmd的用法\]](http://www.cnblogs.com/mantou811/p/6688560.html) - *botherbox*
 
-----------
+### Create Dynamic Classes
 
-cat <<-'EOF'
-> 先虎头蛇尾一下：暂时先写这些吧……
+没有在项目中找到合适的例子，就用 Stack Overflow 上的回答来举例说明一下吧：
 
-> 这几天项目比较紧～
+**NSObject+Subclass.h**
 
-> 而且下面的多数都是参考别人的文章，等过几天有时间再来补全！
+```objc
+#import <objc/runtime.h>
 
-EOF
+typedef struct selBlockPair { 
+    SEL aSEL; 
+    id (^__unsafe_unretained aBlock)(id, ...); 
+} selBlockPair;
 
-----------
+#define NIL_PAIR ((struct selBlockPair) { 0, 0 })
+#define PAIR_LIST (struct selBlockPair [])
+#define BLOCK_CAST (id (^)(id, ...))
 
-### 动态添加一个类
+@interface NSObject (subclass)
+
++(Class) newSubclassNamed:(NSString *) name
+            protocols:(Protocol **) protos
+                 impls:(selBlockPair *) impls;
+
+@end
+```
+
+**NSObject+Subclass.m**
+
+```objc
+@implementation NSObject (subclass)
+
++(Class) newSubclassNamed:(NSString *)name
+             protocols:(Protocol **)protos
+                 impls:(selBlockPair *)impls
+{
+    if (name == nil)
+    {
+        // basically create a random name
+        name = [NSString stringWithFormat:@"%s_%i_%i", class_getName(self), arc4random(), arc4random()];
+    }
+
+    // allocated a new class as a subclass of self (so I could use this on a NSArray if I wanted)
+    Class newClass = objc_allocateClassPair(self, [name UTF8String], 0);
+
+    // add all of the protocols untill we hit null
+    while (protos && *protos != NULL)
+    {
+        class_addProtocol(newClass, *protos);
+        protos++;
+    }
+
+    // add all the impls till we hit null
+    while (impls && impls->aSEL)
+    {
+        class_addMethod(newClass, impls->aSEL, imp_implementationWithBlock(impls->aBlock), "@@:*");
+        impls++;
+    }
+
+    // register our class pair
+    objc_registerClassPair(newClass);
+
+    return newClass;
+}
+
+@end
+```
+
+使用方法如下：
+
+```objc
+int main() {
+    @autoreleasepool {
+        __strong Class newClass = [NSString newSubclassNamed:@"MyCustomString" protocols:NULL impls: PAIR_LIST {
+            @selector(description),
+            BLOCK_CAST ^id (id self) {
+                return @"testing";
+            },
+            NIL_PAIR
+        }];
+
+        NSString *someString = [newClass new];
+        NSLog(@"%@", someString);
+    }
+    return 0;
+}
+```
+
+输出结果如下：
+
+```objc
+2012-10-01 10:07:33.609 TestProj[54428:303] testing
+```
 
 > [\[Create custom dynamic classes in Objective-C\]](http://stackoverflow.com/a/12674557) - *James Paolantonio*
 
@@ -414,9 +493,122 @@ id objc_msgSendSuper(struct objc_super *super, SEL op, ...)
 id _objc_msgForward(id receiver, SEL sel, ...)
 ```
 
+> 09-02 增补两篇转载文章:  
+> [objc_msgSend消息传递学习笔记 (对象方法消息传递流程)](/objc-msgSend-1)  
+> [objc_msgSend消息传递学习笔记 (消息转发)](/objc-msgSend-2)  
+> 文中的剖析比我看了3天源码要透彻得多得多得多。
+
 [\[Objective-C Runtime Programming Guide: Message Forwarding\]](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtForwarding.html) - *Apple Developer Official Document*
 
 ### Method Swizzling
+
+项目中有个需求：在 UITextField 加个默认的协议实现。（比如限制输入文字的长度默认不能超过 11 位）
+
+我的想法是在 Category 中重写一个自己的协议方法，通过 Method Swizzling 进行调换。
+
+首先实现自己的协议方法：
+
+```objc
+- (BOOL)xc_textField:(UITextField *)textField 
+        shouldChangeCharactersInRange:(NSRange)range 
+        replacementString:(NSString *)string {
+        
+    if (!range.length && textField.text.length >= 11) {
+        return NO;
+    }
+    
+    return [self xc_textField:textField 
+                 shouldChangeCharactersInRange:range 
+                 replacementString:string];
+}
+```
+
+因为只有当设置代理时才会走协议方法，我们这里需要重写一下 `delegate` 的 setter 方法：
+
+为了方便起见，我们先封装两个用于方法交换的方法：
+
+```objc
++ (void)swizzleWithOriginClass:(Class)originCls
+              originalSelector:(SEL)originalSelector
+                 swizzledClass:(Class)swizzledCls
+              swizzledSelector:(SEL)swizzledSelector {
+    
+    Method originalMethod = class_getInstanceMethod(originCls, originalSelector);
+    Method swizzledMethod = class_getInstanceMethod(swizzledCls, swizzledSelector);
+    
+    BOOL didAddMethod =
+    class_addMethod(originCls,
+                    swizzledSelector,
+                    method_getImplementation(originalMethod),
+                    method_getTypeEncoding(originalMethod));
+    
+    if (didAddMethod) {
+        method_exchangeImplementations(originalMethod, swizzledMethod);
+    }
+    
+}
+
++ (void)swizzleWithClass:(Class)cls
+        originalSelector:(SEL)originalSelector
+        swizzledSelector:(SEL)swizzledSelector {
+    
+    Method originalMethod = class_getInstanceMethod(cls, originalSelector);
+    Method swizzledMethod = class_getInstanceMethod(cls, swizzledSelector);
+    
+    BOOL didAddMethod =
+    class_addMethod(cls,
+                    originalSelector,
+                    method_getImplementation(swizzledMethod),
+                    method_getTypeEncoding(swizzledMethod));
+    
+    if (didAddMethod) {
+        class_replaceMethod(cls,
+                            swizzledSelector,
+                            method_getImplementation(originalMethod),
+                            method_getTypeEncoding(originalMethod));
+    } else {
+        method_exchangeImplementations(originalMethod, swizzledMethod);
+    }
+}
+```
+
+写一下自己的 `delegate` 的 setter：
+
+```objc
+- (void)xc_setDelegate:(id <UITableViewDelegate>)delegate {
+    [self xc_setDelegate:delegate];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [[self class] swizzleWithOriginClass:delegate.class
+                            originalSelector:@selector(textField:
+                                                       shouldChangeCharactersInRange:
+                                                       replacementString:)
+                               swizzledClass:self.class
+                            swizzledSelector:@selector(xc_textField:
+                                                       shouldChangeCharactersInRange:
+                                                       replacementString:)];
+    });
+}
+```
+
+然后在 `+load` 中更换 `setDelegate` 和我们自己的 `xc_setDelegate`：
+
+```objc
++ (void)load {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self swizzleWithClass:self
+              originalSelector:@selector(setDelegate:)
+              swizzledSelector:@selector(xc_setDelegate:)];
+    });
+}
+```
+
+当 `[someTextField setDelegate:self];` 的时候，就会调用 `xc_setDelegate` 方法。
+
+同理，协议方法也会被替换成我们自己写的方法。
+
+至此，就实现了给 UITextField 增加默认的输入文字位数限制的方法。
 
 [\[Method Swizzling\]](http://nshipster.com/method-swizzling/) - *Mattt Thompson*
 [\[What are the Dangers of Method Swizzling in Objective C?\]](http://stackoverflow.com/a/8636521) - *wbyoung*
